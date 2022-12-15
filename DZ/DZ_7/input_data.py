@@ -11,11 +11,10 @@ def input_data():
     return (x)
 
 
-def serch_contact(i):
-    x = []
-    if i == 1:
+def serch_contact(r):
+    if r == 1:
         x = str(input('\nВведите Фамилию --> '))
-    if i == 2:
+    if r == 2:
         x = str(input('\nВведите номер телефона --> '))
     return x
 

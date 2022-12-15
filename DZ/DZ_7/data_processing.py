@@ -31,7 +31,7 @@ def print_phonebook():
 #             print(el.strip())
 
 
-def serch_cont(x, name):
+def serch_cont(r, name):
     with open(data, 'r', encoding=ENC) as d:
         j=0
         while True:
@@ -42,12 +42,12 @@ def serch_cont(x, name):
                 break
             cont = cont.split(',')
             cont = list(map(str, cont))
-            if x == 1:
+            if r == 1:
                 if cont[0] == name:
                     print('')
                     print(*cont, sep='\t')
                     j+=1
-            if x == 2:
+            if r == 2:
                 if cont[3] == name:
                     print('')
                     print(*cont, sep='\t')
