@@ -12,20 +12,36 @@
 #     case _:
 #         print(f'Erorr {n}')
 
-def f(seg):
-    new_list = []
-    while seg:
-        match seg:
-            case [x, y, z, *tail] if x == y == z:
-                new_list.extend(['3', x])
-            case [x, y, *tail] if x == y:
-                new_list.extend(['2', x])
-            case [x, *tail]:
-                new_list.extend(['1', x])
-        seg = tail
-    return new_list
+# def f(seg):
+#     new_list = []
+#     while seg:
+#         match seg:
+#             case [x, y, z, *tail] if x == y == z:
+#                 new_list.extend(['3', x])
+#             case [x, y, *tail] if x == y:
+#                 new_list.extend(['2', x])
+#             case [x, *tail]:
+#                 new_list.extend(['1', x])
+#         seg = tail
+#     return new_list
     
-seg = ['0']
-for _ in range(15):
-    seg = f(seg)
-    print(''.join(seg))
+# seg = ['0']
+# for _ in range(15):
+#     seg = f(seg)
+#     print(''.join(seg))
+
+# def name_fun(x):
+#     print('Квадрат числа', x, '=', x**2 )
+
+# name_fun(4)
+
+# def even(a):
+#     if a % 2 == 0:
+#         return('Chet')
+#     else:
+#         return('Necet')
+
+# arr = [ i for i in range(0, 15)]
+# print(arr)
+# print(*arr, sep=' # ', end=' @')
+
