@@ -2,11 +2,11 @@
 
 def input_data():
     x = []
-    x.append(str(input('\nВведите Фамилию --> ')))
-    x.append(str(input('\nВведите Имя --> ')))
-    x.append(str(input('\nВведите Отчество --> ')))
-    x.append(str(input('\nВведите номер телефона --> ')))
-    x.append(str(input('\nДобавте описание --> ')))
+    x.append(str(input('\nВведите Фамилию --> ').strip()).lower())
+    x.append(str(input('\nВведите Имя --> ').strip().lower()))
+    x.append(str(input('\nВведите Отчество --> ').strip().lower()))
+    x.append(str(input('\nВведите номер телефона --> ').strip().lower()))
+    x.append(str(input('\nДобавте описание --> ').strip().lower()))
     print(x)
     return (x)
 
