@@ -15,7 +15,7 @@ def new_contact(cont):
         d.writelines(f'{cont[2]},')
         d.writelines(f'{cont[3]},')
         d.writelines(f'{cont[4]}; \n')
-    print('\n\033[32m{}\033[0m'.format(f'Контакт "{cont[0]} {cont[4]}" успешно добавлен\n'))
+    return cont, 1
 
 # new_contact(ind.input_data())
 

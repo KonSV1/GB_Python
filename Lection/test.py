@@ -1,3 +1,4 @@
+import datetime
 # От 0 до 2
 
 
@@ -45,3 +46,12 @@
 # print(arr)
 # print(*arr, sep=' # ', end=' @')
 
+# print(datetime.datetime.now().time('%H:%M:%S'))
+
+# import time
+# named_tuple = time.localtime() # get struct_time
+# print(time.strftime("%m/%d/%Y, %H:%M:%S", named_tuple)).
+
+import os
+
+print(f'\n{os.getcwd()}')
