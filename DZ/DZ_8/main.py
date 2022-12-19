@@ -1,3 +1,3 @@
-import user_interfase as ui
+import control as c
 
-ui.click_button()
+c.click_button()
