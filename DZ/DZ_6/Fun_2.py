@@ -1,19 +1,26 @@
 from random import randint
-
+# import logging
 
 def f(x):
+    # logging.debug(x)
     return randint(1, 100)
 
 
 def new_list(n: int) -> list:   # list creation
     arr = [f(x) for x in range(0, n)]
+    # logging.debug(arr)
     return arr
 
 
 def sum_nech(arr):
     num = [el for i, el in enumerate(arr) if i % 2]
     res = sum(num)
+    # logging.debug(res)
     return num, res
+
+
+
+
 
 # Старый код
 # def new_list(arr: list, n: int)-> list:   # list creation
