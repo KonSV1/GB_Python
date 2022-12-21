@@ -1,6 +1,5 @@
 # from isOdd import isOdd
-# from progress.bar import Bar
-# from progress.bar import FillingSquaresBar
+from progress1bar import ProgressBar
 # import time
 # import emoji
 # import matplotlib.pyplot as plt
@@ -15,12 +14,12 @@
 # print(isOdd(3))  # True
 
 
-# bar = FillingSquaresBar('Processing', max=20)
-# bar = Bar('Processing', max=20)
-# for i in range(20):
-#     time.sleep(0.5)
-#     bar.next()
-# bar.finish()
+bar = FillingSquaresBar('Processing', max=20)
+bar = Bar('Processing', max=20)
+for i in range(20):
+    time.sleep(0.5)
+    bar.next()
+bar.finish()
 
 
 # print(emoji.emojize('Python is :thumbs_up:'))
