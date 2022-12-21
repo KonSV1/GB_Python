@@ -1,0 +1,64 @@
+12/21/2022 15:30:03, user_interfase, select_mode, root, --> mode --> 5 - Удалить весь справочник
+12/21/2022 15:30:05, data_processing, file_del, root, --> DZ/DZ_8/phonebook.csv --> Удален
+12/21/2022 15:39:46, control, click_button, root, --> Start
+12/21/2022 15:39:57, user_interfase, select_mode, root, --> mode --> 7 - Импорт справочника
+12/21/2022 15:39:57, visual, res_operation, root, --> Импорт --> ok
+12/21/2022 15:40:20, control, click_button, root, --> Start
+12/21/2022 15:40:21, user_interfase, select_mode, root, --> mode --> 3 - Просмотр всей телефонной книги
+12/21/2022 15:40:21, visual, res_operation, root, --> Просмотр --> ok
+12/21/2022 15:40:25, control, click_button, root, --> Start
+12/21/2022 15:40:32, user_interfase, select_mode, root, --> mode --> 2 - Поиск контакта
+12/21/2022 15:40:35, data_processing, serch_cont, root, --> /Поиск --> иванов
+12/21/2022 15:40:35, data_processing, serch_cont, root, --> Найден --> ['иванов', 'иван', 'иванович', '8-3822-26-51-09', 'домашний \n']
+12/21/2022 15:40:35, data_processing, serch_cont, root, --> Найден --> ['иванов', 'иван', 'иванович', '8-999-999-9999', 'мобильный \n']
+12/21/2022 15:40:35, data_processing, serch_cont, root, --> Поиск --> ok. Найдено 2
+12/21/2022 15:40:56, control, click_button, root, --> Start
+12/21/2022 15:41:00, user_interfase, select_mode, root, --> mode --> 1 - Создание нового контакта
+12/21/2022 15:41:29, visual, res_operation, root, --> Контакт "Иванов, Рабочий" успешно добавлен
+12/21/2022 15:41:39, control, click_button, root, --> Start
+12/21/2022 15:41:46, user_interfase, select_mode, root, --> mode --> 2 - Поиск контакта
+12/21/2022 15:41:49, data_processing, serch_cont, root, --> /Поиск --> иванов
+12/21/2022 15:41:49, data_processing, serch_cont, root, --> Найден --> ['иванов', 'иван', 'иванович', '8-3822-26-51-09', 'домашний \n']
+12/21/2022 15:41:49, data_processing, serch_cont, root, --> Найден --> ['иванов', 'иван', 'иванович', '8-999-999-9999', 'мобильный \n']
+12/21/2022 15:41:49, data_processing, serch_cont, root, --> Найден --> ['иванов', 'петр', 'васильевич', '8-666-555-4444', 'рабочий\n']
+12/21/2022 15:41:49, data_processing, serch_cont, root, --> Поиск --> ok. Найдено 3
+12/21/2022 15:42:16, control, click_button, root, --> Start
+12/21/2022 15:42:38, user_interfase, select_mode, root, --> mode --> 4 - Удаление контакта
+12/21/2022 15:42:42, data_processing, del_cont, root, --> /Поиск для удаления --> Иванов
+12/21/2022 15:42:47, data_processing, del_cont, root, --> Найден -->Иванов,Иван,Иванович,8-3822-26-51-09,Домашний 
+ --> Удаление отменено
+12/21/2022 15:43:04, data_processing, del_cont, root, --> Найден -->Иванов,Иван,Иванович,8-999-999-9999,Мобильный 
+ --> Удален
+12/21/2022 15:43:07, data_processing, del_cont, root, --> Найден -->Иванов,Петр,Васильевич,8-666-555-4444,Рабочий
+ --> Удаление отменено
+12/21/2022 15:43:35, control, click_button, root, --> Start
+12/21/2022 15:43:38, user_interfase, select_mode, root, --> mode --> 3 - Просмотр всей телефонной книги
+12/21/2022 15:43:38, visual, res_operation, root, --> Просмотр --> ok
+12/21/2022 15:43:50, control, click_button, root, --> Start
+12/21/2022 15:43:55, user_interfase, select_mode, root, --> mode --> 2 - Поиск контакта
+12/21/2022 15:44:01, data_processing, serch_cont, root, --> /Поиск --> 8-999-999-2222
+12/21/2022 15:44:01, data_processing, serch_cont, root, --> Найден --> ['андреев', 'андрей', 'федорович', '8-999-999-2222', 'рабочий\n']
+12/21/2022 15:44:01, data_processing, serch_cont, root, --> Поиск --> ok. Найдено 1
+12/21/2022 15:44:13, control, click_button, root, --> Start
+12/21/2022 15:44:26, user_interfase, select_mode, root, --> mode --> 1 - Создание нового контакта
+12/21/2022 15:44:59, visual, res_operation, root, --> Контакт "Иванов, Мобильный" успешно добавлен
+12/21/2022 15:45:16, control, click_button, root, --> Start
+12/21/2022 15:45:23, user_interfase, select_mode, root, --> mode --> 1 - Создание нового контакта
+12/21/2022 15:45:52, visual, res_operation, root, --> Контакт "Старк, Винтерфелл" успешно добавлен
+12/21/2022 15:46:01, control, click_button, root, --> Start
+12/21/2022 15:46:02, user_interfase, select_mode, root, --> mode --> 6 - Экспортировать справочник в формат JSON
+12/21/2022 15:46:02, visual, res_operation, root, --> Экспорт --> ok Json --> DZ/DZ_8/phonebook.json
+12/21/2022 15:46:06, control, click_button, root, --> Start
+12/21/2022 15:46:10, user_interfase, select_mode, root, --> mode --> 5 - Удалить весь справочник
+12/21/2022 15:46:13, data_processing, file_del, root, --> Удаление отменено
+12/21/2022 15:46:19, control, click_button, root, --> Start
+12/21/2022 15:46:22, user_interfase, select_mode, root, --> mode --> 5 - Удалить весь справочник
+12/21/2022 15:46:24, data_processing, file_del, root, --> DZ/DZ_8/phonebook.csv --> Удален
+12/21/2022 15:46:27, control, click_button, root, --> Start
+12/21/2022 15:46:29, user_interfase, select_mode, root, --> mode --> 7 - Импорт справочника
+12/21/2022 15:46:29, visual, res_operation, root, --> Импорт --> ok
+12/21/2022 15:46:35, control, click_button, root, --> Start
+12/21/2022 15:46:38, user_interfase, select_mode, root, --> mode --> 2 - Поиск контакта
+12/21/2022 15:46:41, data_processing, serch_cont, root, --> /Поиск --> старк
+12/21/2022 15:46:41, data_processing, serch_cont, root, --> Найден --> ['старк', 'нед', 'эддард', '+3-333-333-5555', 'винтерфелл\n']
+12/21/2022 15:46:41, data_processing, serch_cont, root, --> Поиск --> ok. Найдено 1

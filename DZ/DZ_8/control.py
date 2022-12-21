@@ -2,10 +2,12 @@ import visual as v
 import input_data as ind
 import data_processing as dp
 import user_interfase as ui
+import logging
 
 import os
 
 def click_button():
+    logging.info('Start')
     os.system('cls')
     r = ui.select_mode()
     v.print_mode(r)

@@ -1,5 +1,6 @@
 import os
 import visual as v
+import logging
 
 x = {
     1: '1 - Создание нового контакта',
@@ -14,4 +15,5 @@ def select_mode():
     v.print_menu(x)
     while (r := int(input(f'\n\nВыберете режим работы с телефонным справочником:\n--> '))) < 1 or r > 7:
         print('\n\033[31m{}\033[0m'.format('Неверно выбран режим работы'))
+    logging.info(f'mode --> {x[r]}')
     return r
