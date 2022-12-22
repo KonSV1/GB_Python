@@ -1,0 +1,116 @@
+12/22/2022 21:10:30, _application, start, telegram.ext._application, --> Application started
+12/22/2022 21:10:36, bot_command, calc, root, --> Запрос --> /calc
+12/22/2022 21:10:37, _application, process_error, telegram.ext._application, --> No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\.lib\lib\site-packages\telegram\ext\_application.py", line 1070, in process_update
+    await coroutine
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\.lib\lib\site-packages\telegram\ext\_handler.py", line 143, in handle_update
+    return await self.callback(update, context)
+  File "c:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\DZ\DZ_9\Ex_2\bot_command.py", line 35, in calc
+    x, y, op = msg[0], msg[1], msg[2]
+IndexError: list index out of range
+12/22/2022 21:20:13, _application, stop, telegram.ext._application, --> Application is stopping. This might take a moment.
+12/22/2022 21:20:13, _application, stop, telegram.ext._application, --> Application.stop() complete
+12/22/2022 21:21:10, _application, start, telegram.ext._application, --> Application started
+12/22/2022 21:21:14, bot_command, help_comm, root, --> Запрос --> /help
+12/22/2022 21:21:14, bot_command, help_comm, root, --> Ответ --> /hi - приветствие
+/time - узнать дату и время        
+/calc - калькулятор для 2-х чисел
+12/22/2022 21:21:25, bot_command, help_calc, root, --> Запрос --> /helpCalc
+12/22/2022 21:21:25, bot_command, help_calc, root, --> Ответ --> Для проведения вычислений передайте строку вида:        
+/calc (число-1) (число-2) (символ оперрации)
+n+ - сумма
+- - разность
+* - произведение
+/ - деление
+12/22/2022 21:21:52, bot_command, calc, root, --> Запрос --> /calc 2 3 -
+12/22/2022 21:21:52, _application, process_error, telegram.ext._application, --> No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\.lib\lib\site-packages\telegram\ext\_application.py", line 1070, in process_update
+    await coroutine
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\.lib\lib\site-packages\telegram\ext\_handler.py", line 143, in handle_update
+    return await self.callback(update, context)
+  File "c:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\DZ\DZ_9\Ex_2\bot_command.py", line 38, in calc
+    msg = msg.replace(",", ".")
+UnboundLocalError: local variable 'msg' referenced before assignment
+12/22/2022 21:24:53, _application, stop, telegram.ext._application, --> Application is stopping. This might take a moment.
+12/22/2022 21:24:53, _application, stop, telegram.ext._application, --> Application.stop() complete
+12/22/2022 21:25:06, _application, start, telegram.ext._application, --> Application started
+12/22/2022 21:25:15, bot_command, calc, root, --> Запрос --> /calc 2 3 -
+12/22/2022 21:25:15, _application, process_error, telegram.ext._application, --> No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\.lib\lib\site-packages\telegram\ext\_application.py", line 1070, in process_update
+    await coroutine
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\.lib\lib\site-packages\telegram\ext\_handler.py", line 143, in handle_update
+    return await self.callback(update, context)
+  File "c:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\DZ\DZ_9\Ex_2\bot_command.py", line 45, in calc
+    res = x - y
+TypeError: unsupported operand type(s) for -: 'str' and 'str'
+12/22/2022 21:27:00, _application, stop, telegram.ext._application, --> Application is stopping. This might take a moment.
+12/22/2022 21:27:00, _application, stop, telegram.ext._application, --> Application.stop() complete
+12/22/2022 21:27:12, _application, start, telegram.ext._application, --> Application started
+12/22/2022 21:27:22, bot_command, calc, root, --> Запрос --> /calc 2 3 -
+12/22/2022 21:27:22, bot_command, calc, root, --> 2.0 - 3.0 = -1.0
+12/22/2022 21:27:23, _application, process_error, telegram.ext._application, --> No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\.lib\lib\site-packages\telegram\ext\_application.py", line 1070, in process_update
+    await coroutine
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\.lib\lib\site-packages\telegram\ext\_handler.py", line 143, in handle_update
+    return await self.callback(update, context)
+  File "c:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\DZ\DZ_9\Ex_2\bot_command.py", line 60, in calc
+    await update.message.reply_text(x, y, op)
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\.lib\lib\site-packages\telegram\_message.py", line 918, in reply_text
+    return await self.get_bot().send_message(
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\.lib\lib\site-packages\telegram\ext\_extbot.py", line 2492, in send_message
+    return await super().send_message(
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\.lib\lib\site-packages\telegram\_bot.py", line 316, in decorator
+    result = await func(*args, **kwargs)  # skipcq: PYL-E1102
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\.lib\lib\site-packages\telegram\_bot.py", line 746, in send_message
+    return await self._send_message(
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\.lib\lib\site-packages\telegram\ext\_extbot.py", line 490, in _send_message
+    result = await super()._send_message(
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\.lib\lib\site-packages\telegram\_bot.py", line 497, in _send_message
+    result = await self._post(
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\.lib\lib\site-packages\telegram\_bot.py", line 404, in _post
+    return await self._do_post(
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\.lib\lib\site-packages\telegram\ext\_extbot.py", line 308, in _do_post
+    return await super()._do_post(
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\.lib\lib\site-packages\telegram\_bot.py", line 435, in _do_post
+    return await request.post(
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\.lib\lib\site-packages\telegram\request\_baserequest.py", line 167, in post
+    result = await self._request_wrapper(
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\.lib\lib\site-packages\telegram\request\_baserequest.py", line 330, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Unsupported parse_mode
+12/22/2022 21:28:58, _application, stop, telegram.ext._application, --> Application is stopping. This might take a moment.
+12/22/2022 21:28:58, _application, stop, telegram.ext._application, --> Application.stop() complete
+12/22/2022 21:29:02, _application, start, telegram.ext._application, --> Application started
+12/22/2022 21:29:09, bot_command, calc, root, --> Запрос --> /calc 2 3 -
+12/22/2022 21:29:09, bot_command, calc, root, --> 2.0 - 3.0 = -1.0
+12/22/2022 21:29:29, bot_command, calc, root, --> Запрос --> /calc
+12/22/2022 21:29:29, _application, process_error, telegram.ext._application, --> No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\.lib\lib\site-packages\telegram\ext\_application.py", line 1070, in process_update
+    await coroutine
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\.lib\lib\site-packages\telegram\ext\_handler.py", line 143, in handle_update
+    return await self.callback(update, context)
+  File "c:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\DZ\DZ_9\Ex_2\bot_command.py", line 39, in calc
+    x, y, op = float(msg[1]), float(msg[2]), msg[3]
+IndexError: list index out of range
+12/22/2022 21:30:03, bot_command, calc, root, --> Запрос --> /calc 2.52 2,52 -
+12/22/2022 21:30:03, bot_command, calc, root, --> 2.52 - 2.52 = 0.0
+12/22/2022 21:30:49, bot_command, calc, root, --> Запрос --> /calc 2.5 2 ,51 -
+12/22/2022 21:30:49, bot_command, calc, root, --> 2.5 .51 2.0 = неизвестная операция
+12/22/2022 21:31:20, bot_command, calc, root, --> Запрос --> /calc 2.5 2,52 -
+12/22/2022 21:31:20, bot_command, calc, root, --> 2.5 - 2.52 = -0.020000000000000018
+12/22/2022 21:34:17, bot_command, calc, root, --> Запрос --> /calc 2.5 2,52 -
+12/22/2022 21:34:17, bot_command, calc, root, --> 2.5 - 2.52 = -0.020000000000000018
+12/22/2022 21:34:29, _application, stop, telegram.ext._application, --> Application is stopping. This might take a moment.
+12/22/2022 21:34:29, _application, stop, telegram.ext._application, --> Application.stop() complete
+12/22/2022 21:34:38, _application, start, telegram.ext._application, --> Application started
+12/22/2022 21:34:59, bot_command, calc, root, --> Запрос --> /calc 2.5 2,52 -
+12/22/2022 21:34:59, bot_command, calc, root, --> 2.5 - 2.52 = -0.02
+12/22/2022 21:36:00, bot_command, calc, root, --> Запрос --> /calc 56 45 +
+12/22/2022 21:36:00, bot_command, calc, root, --> 56.0 + 45.0 = 101.0
+12/22/2022 21:37:28, _application, stop, telegram.ext._application, --> Application is stopping. This might take a moment.
+12/22/2022 21:37:28, _application, stop, telegram.ext._application, --> Application.stop() complete
