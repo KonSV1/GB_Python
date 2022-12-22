@@ -5,6 +5,7 @@ import logging
 ENC = 'utf-8'
 data_csv = 'DZ/DZ_8/phonebook.csv'
 data_json = 'DZ/DZ_8/phonebook.json'
+data_xml = 'DZ/DZ_8/phonebook.xml'
 
 
 def print_menu(x):
@@ -46,6 +47,9 @@ def print_mode(x):
             print('Конвертация справочника в формат JSON')
         case 7:
             print('Импорт справочника из формата JSON')
+        case 8:
+            print('Конвертация справочника в формат XML')
+
 
 
 def res_operation(cont, x):
@@ -70,3 +74,7 @@ def res_operation(cont, x):
         case 7:
             print(f'\nИмпорт справочника завершен.\n')
             logging.info('Импорт --> ok')
+        case 8:
+            print(
+                f'\nЭкспорт справочника завершен. XML файл находится: {data_xml}\n')
+            logging.info(f'Экспорт --> ok Json --> {data_xml}')

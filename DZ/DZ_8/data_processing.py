@@ -7,6 +7,7 @@ import logging
 ENC = 'utf-8'
 data_csv = 'DZ/DZ_8/phonebook.csv'
 data_json = 'DZ/DZ_8/phonebook.json'
+data_xml = 'DZ/DZ_8/phonebook.xml'
 
 
 def new_contact(cont):
@@ -130,3 +131,25 @@ def json_to_csv():
                 count += 1
             csv_writer.writerow(emp.values())
         data_file.close()
+
+
+
+def convert_row(i):
+    return """<phonebook>
+	<фамилия>%s</фамилия>
+    <имя>%s</имя>
+    <отчество>%s</отчество>
+    <телефон>%s</телефон>
+    <описание>%s</описание>
+    </phonebook>""" % (i[0], i[1] ,i[2] , i[3], i[4])
+
+def csv_to_xml():
+    xml_arr = []
+    with open(data_csv, 'r', newline='\n', encoding=ENC) as d:
+        csv_list = csv.reader(d)
+        for i in csv_list:
+            xml_arr.append(i)
+    # print(xml_arr[1:2])
+    with open(data_xml, 'w', encoding=ENC) as f:
+        f.write('\n'.join([convert_row(i) for i in xml_arr[1:]]))
+

@@ -26,6 +26,8 @@ def click_button():
             v.res_operation(dp.csv_to_json(), r)
         case 7:
             v.res_operation(dp.json_to_csv(), r)
+        case 8:
+            v.res_operation(dp.csv_to_xml(), r)
  
     
     

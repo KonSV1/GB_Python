@@ -62,3 +62,10 @@
 12/21/2022 15:46:41, data_processing, serch_cont, root, --> /Поиск --> старк
 12/21/2022 15:46:41, data_processing, serch_cont, root, --> Найден --> ['старк', 'нед', 'эддард', '+3-333-333-5555', 'винтерфелл\n']
 12/21/2022 15:46:41, data_processing, serch_cont, root, --> Поиск --> ok. Найдено 1
+12/22/2022 16:48:41, control, click_button, root, --> Start
+12/22/2022 16:49:19, control, click_button, root, --> Start
+12/22/2022 16:49:21, user_interfase, select_mode, root, --> mode --> 8 - Конвертировать справочник в XML файл
+12/22/2022 16:49:21, visual, res_operation, root, --> Экспорт --> ok Json --> DZ/DZ_8/phonebook.xml
+12/22/2022 16:50:40, control, click_button, root, --> Start
+12/22/2022 16:50:44, user_interfase, select_mode, root, --> mode --> 8 - Конвертировать справочник в XML файл
+12/22/2022 16:50:44, visual, res_operation, root, --> Экспорт --> ok Json --> DZ/DZ_8/phonebook.xml
