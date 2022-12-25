@@ -1,0 +1,484 @@
+12/25/2022 22:11:48, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
+12/25/2022 22:11:54, base_events, default_exception_handler, asyncio, --> Task exception was never retrieved
+future: <Task finished name='Task-8' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=AttributeError("'str' object has no attribute 'write'")>
+Traceback (most recent call last):
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\project_1\main.py", line 64, in select
+    csv.write(str(l[i].value) + ',')
+    ^^^^^^^^^
+AttributeError: 'str' object has no attribute 'write'
+12/25/2022 22:12:02, base_events, default_exception_handler, asyncio, --> Task exception was never retrieved
+future: <Task finished name='Task-23' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=AttributeError("'str' object has no attribute 'write'")>
+Traceback (most recent call last):
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\project_1\main.py", line 64, in select
+    csv.write(str(l[i].value) + ',')
+    ^^^^^^^^^
+AttributeError: 'str' object has no attribute 'write'
+12/25/2022 22:12:05, base_events, default_exception_handler, asyncio, --> Task exception was never retrieved
+future: <Task finished name='Task-27' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=AttributeError("'str' object has no attribute 'write'")>
+Traceback (most recent call last):
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\project_1\main.py", line 64, in select
+    csv.write(str(l[i].value) + ',')
+    ^^^^^^^^^
+AttributeError: 'str' object has no attribute 'write'
+12/25/2022 22:13:10, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Polling is stopped.
+12/25/2022 22:13:10, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
+12/25/2022 22:13:10, base_events, default_exception_handler, asyncio, --> Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000019676361010>
+12/25/2022 22:13:10, base_events, default_exception_handler, asyncio, --> Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x000001967DF83B60>, 25467.984)]']
+connector: <aiohttp.connector.TCPConnector object at 0x000001967DCBA0D0>
+12/25/2022 22:13:13, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
+12/25/2022 22:13:23, base_events, default_exception_handler, asyncio, --> Task exception was never retrieved
+future: <Task finished name='Task-10' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=AttributeError("'str' object has no attribute 'write'")>
+Traceback (most recent call last):
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\project_1\main.py", line 64, in select
+    csv.write((l[i].value) + ',')
+    ^^^^^^^^^
+AttributeError: 'str' object has no attribute 'write'
+12/25/2022 22:13:32, base_events, default_exception_handler, asyncio, --> Task exception was never retrieved
+future: <Task finished name='Task-27' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=AttributeError("'str' object has no attribute 'write'")>
+Traceback (most recent call last):
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\project_1\main.py", line 64, in select
+    csv.write((l[i].value) + ',')
+    ^^^^^^^^^
+AttributeError: 'str' object has no attribute 'write'
+12/25/2022 22:15:44, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Polling is stopped.
+12/25/2022 22:15:44, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
+12/25/2022 22:15:44, base_events, default_exception_handler, asyncio, --> Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001FB11A99A50>
+12/25/2022 22:15:48, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
+12/25/2022 22:15:55, base_events, default_exception_handler, asyncio, --> Task exception was never retrieved
+future: <Task finished name='Task-18' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=AttributeError("'str' object has no attribute 'write'")>
+Traceback (most recent call last):
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\project_1\main.py", line 64, in select
+    csv.write(l[i].value) + ','
+    ^^^^^^^^^
+AttributeError: 'str' object has no attribute 'write'
+12/25/2022 22:19:35, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Polling is stopped.
+12/25/2022 22:19:36, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
+12/25/2022 22:19:36, base_events, default_exception_handler, asyncio, --> Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000019886AE78D0>
+12/25/2022 22:19:39, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
+12/25/2022 22:19:47, base_events, default_exception_handler, asyncio, --> Task exception was never retrieved
+future: <Task finished name='Task-10' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError("unsupported operand type(s) for +: 'int' and 'str'")>
+Traceback (most recent call last):
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\project_1\main.py", line 64, in select
+    csv.write(l[i].value) + ','
+    ~~~~~~~~~~~~~~~~~~~~~~^~~~~
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+12/25/2022 22:20:04, base_events, default_exception_handler, asyncio, --> Task exception was never retrieved
+future: <Task finished name='Task-31' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError("unsupported operand type(s) for +: 'int' and 'str'")>
+Traceback (most recent call last):
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\project_1\main.py", line 64, in select
+    csv.write(l[i].value) + ','
+    ~~~~~~~~~~~~~~~~~~~~~~^~~~~
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+12/25/2022 22:20:06, base_events, default_exception_handler, asyncio, --> Task exception was never retrieved
+future: <Task finished name='Task-35' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError("unsupported operand type(s) for +: 'int' and 'str'")>
+Traceback (most recent call last):
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\project_1\main.py", line 64, in select
+    csv.write(l[i].value) + ','
+    ~~~~~~~~~~~~~~~~~~~~~~^~~~~
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+12/25/2022 22:21:25, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Polling is stopped.
+12/25/2022 22:21:25, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
+12/25/2022 22:21:25, base_events, default_exception_handler, asyncio, --> Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001B6B8B0DE10>
+12/25/2022 22:21:28, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
+12/25/2022 22:21:36, base_events, default_exception_handler, asyncio, --> Task exception was never retrieved
+future: <Task finished name='Task-18' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError("'in <string>' requires string as left operand, not Message")>
+Traceback (most recent call last):
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\project_1\main.py", line 71, in select
+    if message in cont:
+       ^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not Message
+12/25/2022 22:27:09, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Polling is stopped.
+12/25/2022 22:27:09, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
+12/25/2022 22:27:09, base_events, default_exception_handler, asyncio, --> Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000021D2CBFBF90>
+12/25/2022 22:27:14, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
+12/25/2022 22:27:20, base_events, default_exception_handler, asyncio, --> Task exception was never retrieved
+future: <Task finished name='Task-17' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=NameError("name 'keyboard' is not defined")>
+Traceback (most recent call last):
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\project_1\main.py", line 76, in select
+    \nТел.(сот) - {cont[8]}\nE-mail - {cont[9]}'), reply_markup=keyboard)
+                                                               ^^^^^^^^
+NameError: name 'keyboard' is not defined
+12/25/2022 22:27:52, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Polling is stopped.
+12/25/2022 22:27:52, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
+12/25/2022 22:27:52, base_events, default_exception_handler, asyncio, --> Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001C28D672410>
+12/25/2022 22:27:55, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
+12/25/2022 22:28:05, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Polling is stopped.
+12/25/2022 22:28:05, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
+12/25/2022 22:28:05, base_events, default_exception_handler, asyncio, --> Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x00000244F82EF8D0>
+12/25/2022 22:28:09, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
+12/25/2022 22:30:22, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Polling is stopped.
+12/25/2022 22:30:22, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
+12/25/2022 22:30:22, base_events, default_exception_handler, asyncio, --> Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x00000245089CDB90>
+12/25/2022 22:30:32, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
+12/25/2022 22:32:29, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Polling is stopped.
+12/25/2022 22:32:29, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
+12/25/2022 22:32:29, base_events, default_exception_handler, asyncio, --> Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001A828DB5B50>
+12/25/2022 22:32:33, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
+12/25/2022 22:34:47, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Polling is stopped.
+12/25/2022 22:34:47, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
+12/25/2022 22:34:47, base_events, default_exception_handler, asyncio, --> Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001BBB6E09390>
+12/25/2022 22:34:50, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
+12/25/2022 22:35:25, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Polling is stopped.
+12/25/2022 22:35:26, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
+12/25/2022 22:35:26, base_events, default_exception_handler, asyncio, --> Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000026101752D10>
+12/25/2022 22:37:29, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
+12/25/2022 22:38:06, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Polling is stopped.
+12/25/2022 22:38:06, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
+12/25/2022 22:38:06, base_events, default_exception_handler, asyncio, --> Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000002EB89CC4190>
+12/25/2022 22:39:05, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
+12/25/2022 22:39:15, main, select, root, --> Руководство
+12/25/2022 22:39:18, main, select, root, --> Администрация при руководстве
+12/25/2022 22:39:28, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Polling is stopped.
+12/25/2022 22:39:28, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
+12/25/2022 22:39:28, base_events, default_exception_handler, asyncio, --> Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x00000195A7A86450>
+12/25/2022 22:39:28, base_events, default_exception_handler, asyncio, --> Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x00000195A9104BB0>, 27033.89)]']
+connector: <aiohttp.connector.TCPConnector object at 0x00000195A1419BD0>
+12/25/2022 22:41:00, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
+12/25/2022 22:41:04, main, select, root, --> Администрация при руководстве
+12/25/2022 22:41:06, main, select, root, --> Руководство
+12/25/2022 22:41:09, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Polling is stopped.
+12/25/2022 22:41:09, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
+12/25/2022 22:41:09, base_events, default_exception_handler, asyncio, --> Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001E092ACB350>
+12/25/2022 22:41:13, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
+12/25/2022 22:41:31, main, select, root, --> Администрация при руководстве
+12/25/2022 22:45:32, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Polling is stopped.
+12/25/2022 22:45:32, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
+12/25/2022 22:45:32, base_events, default_exception_handler, asyncio, --> Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000019FD7BCB910>
+12/25/2022 22:45:35, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
+12/25/2022 22:45:46, main, select, root, --> Администрация при руководстве
+12/25/2022 22:45:59, main, select, root, --> Руководство
+12/25/2022 22:46:48, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Polling is stopped.
+12/25/2022 22:46:49, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
+12/25/2022 22:46:49, base_events, default_exception_handler, asyncio, --> Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001FC1F0F7F10>
+12/25/2022 22:46:51, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
+12/25/2022 22:46:58, main, select, root, --> Руководство
+12/25/2022 22:47:07, main, select, root, --> Руководство
+12/25/2022 22:55:29, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Polling is stopped.
+12/25/2022 22:55:29, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
+12/25/2022 22:55:29, base_events, default_exception_handler, asyncio, --> Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000024AC6D166D0>
+12/25/2022 22:55:36, executor, _welcome, aiogram, --> Bot: GB_proj_1 [@GB_proj_1_Bot]
+12/25/2022 22:55:36, executor, start_polling, aiogram, --> Goodbye!
+12/25/2022 22:57:48, executor, _welcome, aiogram, --> Bot: GB_proj_1 [@GB_proj_1_Bot]
+12/25/2022 22:57:48, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
+12/25/2022 22:57:55, main, select, root, --> Руководство
+12/25/2022 22:57:57, main, select, root, --> Администрация при руководстве
+12/25/2022 22:58:06, main, select, root, --> Отдел_2
+12/25/2022 22:58:13, main, select, root, --> Администрация при руководстве
+12/25/2022 22:58:18, main, select, root, --> Руководство
+12/25/2022 23:00:10, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
+12/25/2022 23:00:10, executor, start_polling, aiogram, --> Goodbye!
+12/25/2022 23:09:59, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
+12/25/2022 23:10:07, main, select, root, --> Администрация при руководстве
+12/25/2022 23:10:11, main, select, root, --> Руководство
+12/25/2022 23:10:15, main, select, root, --> Руководство
+12/25/2022 23:57:05, main, select, root, --> Руководство
+12/25/2022 23:57:18, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Polling is stopped.
+12/25/2022 23:57:18, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
+12/25/2022 23:57:18, base_events, default_exception_handler, asyncio, --> Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000024D0AB56450>
+12/26/2022 00:14:09, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
+12/26/2022 00:14:25, main, select, root, --> Руководство
+12/26/2022 00:14:28, main, select, root, --> Администрация при руководстве
+12/26/2022 00:14:30, main, select, root, --> Руководство
+12/26/2022 00:14:47, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Polling is stopped.
+12/26/2022 00:14:47, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
+12/26/2022 00:14:47, base_events, default_exception_handler, asyncio, --> Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001CC64EB78D0>
+12/26/2022 00:14:47, base_events, default_exception_handler, asyncio, --> Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x000001CC6C8B0670>, 32744.0)]']
+connector: <aiohttp.connector.TCPConnector object at 0x000001CC6B226050>
+12/26/2022 00:14:51, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
+12/26/2022 00:17:06, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Polling is stopped.
+12/26/2022 00:17:07, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
+12/26/2022 00:17:07, base_events, default_exception_handler, asyncio, --> Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001A5459578D0>
+12/26/2022 00:17:10, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
+12/26/2022 00:18:14, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Polling is stopped.
+12/26/2022 00:18:14, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
+12/26/2022 00:18:14, base_events, default_exception_handler, asyncio, --> Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001527A3C7650>
+12/26/2022 00:21:29, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
+12/26/2022 00:21:36, main, select, root, --> Руководство
+12/26/2022 00:21:41, main, select, root, --> Руководство
+12/26/2022 00:21:56, main, select, root, --> Руководство
+12/26/2022 00:25:39, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Polling is stopped.
+12/26/2022 00:25:39, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
+12/26/2022 00:25:39, base_events, default_exception_handler, asyncio, --> Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001D4BC047FD0>
+12/26/2022 00:25:43, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
+12/26/2022 00:25:52, main, select, root, --> Руководство
+12/26/2022 00:27:57, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Polling is stopped.
+12/26/2022 00:27:57, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
+12/26/2022 00:27:57, base_events, default_exception_handler, asyncio, --> Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001975F4F9BD0>
+12/26/2022 00:28:01, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
+12/26/2022 00:29:01, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Polling is stopped.
+12/26/2022 00:29:01, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
+12/26/2022 00:29:01, base_events, default_exception_handler, asyncio, --> Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001EF2CBCD750>
+12/26/2022 00:29:04, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
+12/26/2022 00:32:02, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Polling is stopped.
+12/26/2022 00:32:02, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
+12/26/2022 00:32:02, base_events, default_exception_handler, asyncio, --> Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000010CB0DDD750>
+12/26/2022 00:32:05, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
+12/26/2022 00:32:12, main, select, root, --> Руководство
+12/26/2022 00:32:25, main, select, root, --> Руководство
+12/26/2022 00:32:27, main, select, root, --> Руководство
+12/26/2022 00:33:05, main, select, root, --> Отдел_1
+12/26/2022 00:33:07, main, select, root, --> Отдел_2
+12/26/2022 00:33:09, main, select, root, --> Отдел_3
+12/26/2022 00:33:10, main, select, root, --> Отдел_6
+12/26/2022 00:33:10, main, select, root, --> Отдел_5
+12/26/2022 00:33:11, main, select, root, --> Отдел_4
+12/26/2022 00:33:12, main, select, root, --> Руководство
+12/26/2022 00:33:43, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Polling is stopped.
+12/26/2022 00:33:44, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
+12/26/2022 00:33:44, base_events, default_exception_handler, asyncio, --> Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001FB83844490>
+12/26/2022 00:34:12, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
+12/26/2022 00:34:23, main, select, root, --> Руководство
+12/26/2022 00:34:38, main, select, root, --> Аппарат при руководстве
+12/26/2022 00:34:44, main, select, root, --> Руководство
+12/26/2022 00:34:46, main, select, root, --> Отдел_1
+12/26/2022 00:34:49, main, select, root, --> Аппарат при руководстве
+12/26/2022 00:39:01, main, select, root, --> Аппарат при руководстве
+12/26/2022 00:39:56, main, select, root, --> Аппарат при руководстве
+12/26/2022 00:40:03, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Polling is stopped.
+12/26/2022 00:40:03, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
+12/26/2022 00:40:03, base_events, default_exception_handler, asyncio, --> Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x00000174A970B910>
+12/26/2022 00:40:03, base_events, default_exception_handler, asyncio, --> Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x00000174B1341630>, 34272.343)]']
+connector: <aiohttp.connector.TCPConnector object at 0x00000174B1000E50>
+12/26/2022 00:40:13, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
+12/26/2022 00:40:16, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Polling is stopped.
+12/26/2022 00:40:16, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
+12/26/2022 00:40:16, base_events, default_exception_handler, asyncio, --> Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000027F1BBB2890>
+12/26/2022 00:40:19, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
+12/26/2022 00:41:17, main, select, root, --> Руководство
+12/26/2022 00:41:22, main, select, root, --> Аппарат при руководстве
+12/26/2022 00:41:26, main, select, root, --> Отдел_1
+12/26/2022 00:41:56, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Polling is stopped.
+12/26/2022 00:41:56, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
+12/26/2022 00:41:56, base_events, default_exception_handler, asyncio, --> Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001D89C582990>
+12/26/2022 00:43:06, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
+12/26/2022 00:45:15, main, select, root, --> Руководство
+12/26/2022 00:45:19, main, select, root, --> Аппарат при руководстве
+12/26/2022 00:45:23, main, select, root, --> Отдел 1
+12/26/2022 00:45:27, main, select, root, --> Отдел 2
+12/26/2022 00:50:09, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Polling is stopped.
+12/26/2022 00:50:09, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
+12/26/2022 00:50:09, base_events, default_exception_handler, asyncio, --> Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000002903BBF1C10>
+12/26/2022 00:50:44, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
+12/26/2022 00:52:19, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Polling is stopped.
+12/26/2022 00:52:19, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
+12/26/2022 00:52:19, base_events, default_exception_handler, asyncio, --> Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001D588F0A550>
+12/26/2022 00:52:21, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
+12/26/2022 00:52:33, main, select, root, --> Руководство
+12/26/2022 00:52:35, main, select, root, --> Аппарат при руководстве
+12/26/2022 00:53:21, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Polling is stopped.
+12/26/2022 00:53:21, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
+12/26/2022 00:53:21, base_events, default_exception_handler, asyncio, --> Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x00000204E4B61290>
+12/26/2022 00:53:24, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
+12/26/2022 00:53:26, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Polling is stopped.
+12/26/2022 00:53:27, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
+12/26/2022 00:53:27, base_events, default_exception_handler, asyncio, --> Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000022FAF84E0D0>
+12/26/2022 00:54:32, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
+12/26/2022 00:54:44, main, select, root, --> Руководство
+12/26/2022 00:54:46, main, select, root, --> Аппарат при руководстве
+12/26/2022 00:54:51, main, select, root, --> Отдел 5
+12/26/2022 00:58:44, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Polling is stopped.
+12/26/2022 00:58:44, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
+12/26/2022 00:58:44, base_events, default_exception_handler, asyncio, --> Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x00000261A6873B50>
