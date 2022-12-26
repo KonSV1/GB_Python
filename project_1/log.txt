@@ -29,3 +29,49 @@ client_session: <aiohttp.client.ClientSession object at 0x0000024193C6E550>
 12/26/2022 20:17:12, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
 12/26/2022 20:17:12, base_events, default_exception_handler, asyncio, --> Unclosed client session
 client_session: <aiohttp.client.ClientSession object at 0x000001EB7E312E50>
+12/26/2022 20:36:05, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
+12/26/2022 20:36:05, main, cmd_start, root, --> Главная
+12/26/2022 20:36:05, main, cmd_start, root, --> Главная
+12/26/2022 20:36:19, main, start, root, --> Телефонный справочник
+12/26/2022 20:36:29, main, select, root, --> Руководство
+12/26/2022 20:36:37, main, select, root, --> Аппарат при руководстве
+12/26/2022 20:36:39, main, select, root, --> Отдел 6
+12/26/2022 20:37:17, main, select, root, --> Отдел 2
+12/26/2022 20:37:21, main, cmd_start, root, --> Главная
+12/26/2022 20:37:22, main, inp, root, --> Калькулятор
+12/26/2022 20:37:31, main, s, root, --> ['5', '8', '9', '+', '2', '5', '6', '9'] = 3158
+12/26/2022 20:37:48, main, s, root, --> ['2', '9', '5', '3', '/', '5'] = 590.6
+12/26/2022 20:37:54, base_events, default_exception_handler, asyncio, --> Task exception was never retrieved
+future: <Task finished name='Task-182' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=SyntaxError('invalid syntax', ('<string>', 1, 0, '2**', 1, 0))>
+Traceback (most recent call last):
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\project_1\main.py", line 124, in s
+    res = eval(''.join(mes))
+          ^^^^^^^^^^^^^^^^^^
+  File "<string>", line 1
+    2**
+SyntaxError: invalid syntax
+12/26/2022 20:38:01, main, s, root, --> ['2', '*', '*', '5', '*', '6'] = 192
+12/26/2022 20:38:18, main, s, root, --> ['5', '*', '*', '1'] = 5
+12/26/2022 20:59:36, main, cmd_start, root, --> Главная
+12/26/2022 20:59:43, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Polling is stopped.
+12/26/2022 20:59:43, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
+12/26/2022 20:59:43, base_events, default_exception_handler, asyncio, --> Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x00000208240F5550>
+12/26/2022 20:59:43, base_events, default_exception_handler, asyncio, --> Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x0000020824432040>, 30364.89)]']
+connector: <aiohttp.connector.TCPConnector object at 0x0000020824446290>

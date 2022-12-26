@@ -127,22 +127,6 @@ async def inp(message: types.Message):
             mes.clear()
 
 
-
-
-
-
-
-
-
-
-     
-        # await message.answer(text=st)
-
-
-
-
-    await message.answer(text='Простой калькулятор', reply_markup=keyboard)
-
 print('Server  starting')
 
 
