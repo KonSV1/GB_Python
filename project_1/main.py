@@ -1,11 +1,11 @@
 from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
 from aiogram.utils import executor
-from aiogram.dispatcher.filters import Text
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, KeyboardButtonPollType
 import asyncio
 import logging
 from openpyxl import load_workbook
+import random
 
 
 ENC = 'utf-8'
@@ -131,318 +131,227 @@ async def inp(message: types.Message):
 
 @dp.message_handler(text='Игра в монетки')
 async def note(message: types.Message):
-    await message.answer(text='Предлагаю сыграть в игру на доверие. Правила игры просты:\nЕсть некий автомат в \
+    opp = int(random.randint(1, 5))
+    arr_pl = []
+    arr_opp = []
+    rez_pl, rez_opp, j = 0, 0, 0
+    await message.answer(text='Предлагаю сыграть со мной в игру на доверие. Правила игры просты:\nЕсть некий автомат в \
 который два игрока по очереди могут опустить (Доверие) \
 или не опускать (Обман) монетку.\n- Если оба игрока доверяют друг другу (оба опустили в автомат по монетке) то каждый из них\
 получает в награду по 2 монеты.\n- Если оба игрока обманули друг друга (ни кто из обоих игроков не опустил в автомат монетку),\
 то ни один из игроков награды не получает.\n- Если один из игроков обманывает, а второй доверяет, то обманщик получает в\
 награду три монеты, доверившийся игрок награды не получает.\
-\nИгра состоит из нескольких раундов по 10 ходов. Побеждает тот игрок, у которго по окончении игры больше монет.')
-    keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
-    buttons = ['три', 'пять', 'десять', 'Главная']
-    keyboard.add(*buttons)
-    await bot.send_message(chat_id=message.chat.id, text='Выберете количество раундов', reply_markup=keyboard)
-    m = 0
-    @dp.message_handler(text=['три', 'пять', 'десять'])
-    async def game(message: types.Message):
+\nПобеждает тот игрок, у которго по итогу 10-ти ходов больше монет.')
+    trust = types.KeyboardButton('Опустить монетку')
+    cheat = types.KeyboardButton('Обмануть')
+    home = types.KeyboardButton('Главная')
+    keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    keyboard.row(trust, cheat, home)
+    await bot.send_message(chat_id=message.chat.id, text='Начнем? Делайте ход.', reply_markup=keyboard)
+
+    @dp.message_handler(text=['Опустить монетку', 'Обмануть'])
+    async def game_start(message: types.Message,):
+        nonlocal j, rez_opp, rez_pl
         logging.info(message.text)
-        if message.text == 'три':
-            m = 3
-        if message.text == 'пять':
-            m = 5
-        if message.text == 'десять':
-            m = 10
-        await bot.send_message(chat_id=message.chat.id, text=(f'\nВыбрана игра из {m} раундов'))
-        trust = types.KeyboardButton('Опустить монетку')
-        cheat = types.KeyboardButton('Обмануть')
-        home = types.KeyboardButton('Главная')
-        keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
-        keyboard.row(trust, cheat, home)
-        await bot.send_message(chat_id=message.chat.id, text='Начнем', reply_markup=keyboard)
-        opp = 1
-        arr_pl = []
-        arr_opp = []
-        roun, s_pl, s_opp = 0, 0, 0
-        rez_pl, rez_opp = 0, 0,
-        logging.info(message.text)
-        while roun < m:
-            j = 0
-            while j < 10:
-                @dp.message_handler(text=['Опустить монетку', 'Обмануть'])
-                async def game_start(message: types.Message,):
-                    logging.info(message.text)
-                    if message.text == 'Опустить монетку':
-                        z_pl = 1
+        match (message.text):
+            case 'Обмануть':
+                arr_pl.append(0)
+            case 'Опустить монетку':
+                arr_pl.append(1)
+        logging.info(arr_pl)
+        await bot.send_message(chat_id=message.chat.id, text=(f'Ход: {j+1}'))
+        match (opp):
+            case 1:  # Наивный
+                arr_opp.append(1)
+                if arr_pl[j] == 1:
+                    rez_pl = rez_pl + 2
+                    rez_opp = rez_opp + 2
+                    j += 1
+                    await true_true(rez_pl, rez_opp)
+                else:
+                    rez_pl = rez_pl + 3
+                    j += 1
+                    await false_true(rez_pl, rez_opp)
+            case 2:  # Обманщик
+                if arr_pl[j] == 1:
+                    rez_opp = rez_opp + 3
+                    await true_false(rez_pl, rez_opp)
+                    arr_opp.append(0)
+                    j += 1
+                else:
+                    await false_false(rez_pl, rez_opp)
+                    arr_opp.append(0)
+                    j += 1
+            case 3:  # Подражатель
+                if j == 0:
+                    if arr_pl[j] == 1:
+                        rez_pl = rez_pl + 2
+                        rez_opp = rez_opp + 2
+                        await true_true(rez_pl, rez_opp)
+                        arr_opp.append(1)
+                        j += 1
                     else:
-                        z_pl = 0
-                    arr_pl.append(z_pl)
-                    logging.info(z_pl)
-                    logging.info( arr_pl)
-                    await bot.send_message(chat_id=message.chat.id, text=(f'\nРаунд {roun+1}, ход {len(arr_pl)}'))
-                    nonlocal rez_pl
-                    nonlocal rez_opp
-                    match (opp):
-                        case 1:  # Наивный
+                        rez_pl = rez_pl + 3
+                        await false_true(rez_pl, rez_opp)
+                        arr_opp.append(1)
+                        j += 1
+                else:
+                    if arr_pl[j] == 1 and arr_pl[j-1] == 1:
+                        rez_pl = rez_pl + 2
+                        rez_opp = rez_opp + 2
+                        await true_true(rez_pl, rez_opp)
+                        arr_opp.append(1)
+                        j += 1
+                    elif arr_pl[j] == 1 and arr_pl[j-1] == 0:
+                        rez_opp = rez_opp + 3
+                        await true_false(rez_pl, rez_opp)
+                        arr_opp.append(0)
+                        j += 1
+                    elif arr_pl[j] == 0 and arr_pl[j-1] == 1:
+                        rez_pl = rez_pl + 3
+                        await false_true(rez_pl, rez_opp)
+                        arr_opp.append(1)
+                        j += 1
+                    elif arr_pl[j] == 0 and arr_pl[j-1] == 0:
+                        await false_false(rez_pl, rez_opp)
+                        arr_opp.append(0)
+                        j += 1
+            case 4:  # Злопамятный
+                if arr_pl[j] == 1 and 0 not in arr_pl:
+                    rez_pl = rez_pl + 2
+                    rez_opp = rez_opp + 2
+                    await true_true(rez_pl, rez_opp)
+                    arr_opp.append(1)
+                    j += 1
+                elif arr_pl[j] == 0 and sum(arr_pl) == len(arr_pl)-1:
+                    rez_pl = rez_pl + 3
+                    await false_true(rez_pl, rez_opp)
+                    arr_opp.append(1)
+                    j += 1
+                elif arr_pl[j] == 1 and sum(arr_pl) < len(arr_pl):
+                    rez_opp = rez_opp + 3
+                    await true_false(rez_pl, rez_opp)
+                    arr_opp.append(0)
+                    j += 1
+                elif arr_pl[j] == 0 and sum(arr_pl) < len(arr_pl) - 1:
+                    await false_false(rez_pl, rez_opp)
+                    arr_opp.append(0)
+                    j += 1
+            case 5:  # Детектив
+                match(j):
+                    case 0:
+                        if arr_pl[j] == 0:
+                            rez_pl = rez_pl + 3
+                            await false_true(rez_pl, rez_opp)
                             arr_opp.append(1)
-                            if arr_pl[j] == 1:
+                            j += 1
+                        else:
+                            rez_pl = rez_pl + 2
+                            rez_opp = rez_opp + 2
+                            await true_true(rez_pl, rez_opp)
+                            arr_opp.append(1)
+                            j += 1
+                    case 1:
+                        if arr_pl[j] == 0:
+                            await false_false(rez_pl, rez_opp)
+                            arr_opp.append(0)
+                            j += 1
+                        else:
+                            rez_opp = rez_opp + 3
+                            await true_false(rez_pl, rez_opp)
+                            arr_opp.append(0)
+                            j += 1
+                    case 2:
+                        if arr_pl[j] == 0:
+                            rez_pl = rez_pl + 3
+                            await false_true(rez_pl, rez_opp)
+                            arr_opp.append(1)
+                            j += 1
+                        else:
+                            rez_pl = rez_pl + 2
+                            rez_opp = rez_opp + 2
+                            await true_true(rez_pl, rez_opp)
+                            arr_opp.append(1)
+                            j += 1
+                    case 3:
+                        if arr_pl[j] == 0:
+                            rez_pl = rez_pl + 3
+                            await false_true(rez_pl, rez_opp)
+                            arr_opp.append(1)
+                            j += 1
+                        else:
+                            rez_pl = rez_pl + 2
+                            rez_opp = rez_opp + 2
+                            await true_true(rez_pl, rez_opp)
+                            arr_opp.append(1)
+                            j += 1
+                    case _:
+                        if arr_pl[2] == 0:
+                            if arr_pl[j] == 1 and arr_pl[j-1] == 1:
                                 rez_pl = rez_pl + 2
                                 rez_opp = rez_opp + 2
-                                arr_pl.append(1)
-                                j +=1
-                                await bot.send_message(chat_id=message.chat.id, text=(
-                                        'Поздравляем, вы доверяете друг другу. Каждый игрок получает в награду по 2 монеты.'))
-                                await bot.send_message(chat_id=message.chat.id, text=(
-                                        f'Счет составляет: У вас {rez_pl} монет, у второго игрока {rez_opp} монет'))
-                            else:
+                                await true_true(rez_pl, rez_opp)
+                                arr_opp.append(1)
+                                j += 1
+                            elif arr_pl[j] == 1 and arr_pl[j-1] == 0:
+                                rez_opp = rez_opp + 3
+                                await true_false(rez_pl, rez_opp)
+                                arr_opp.append(0)
+                                j += 1
+                            elif arr_pl[j] == 0 and arr_pl[j-1] == 1:
                                 rez_pl = rez_pl + 3
-                                j +=1
-                                await bot.send_message(chat_id=message.chat.id, text=(
-                                        'Вам удалось обмануть другого игрока. Вы получаете в награду 3 монеты, другой игрок ничего не получает.'))
-                                await bot.send_message(chat_id=message.chat.id, text=(
-                                        f'Счет составляет: У вас {rez_pl} монет, у второго игрока {rez_pl} монет'))
-                        case 2:  # Обманщик
+                                await false_true(rez_pl, rez_opp)
+                                arr_opp.append(1)
+                                j += 1
+                            elif arr_pl[j] == 0 and arr_pl[j-1] == 0:
+                                await false_false(rez_pl, rez_opp)
+                                arr_opp.append(0)
+                                j += 1
+                        else:
                             if arr_pl[j] == 1:
                                 rez_opp = rez_opp + 3
-                                print('\033[31m{}\033[0m'.format(
-                                    'Сожалеем Вас обманули. Вы не получаете награды, другой игрок получает в награду 3 монеты.'))
-                                print(
-                                    f'Счет составляет: У вас {rez_pl} монет, у второго игрока {rez_opp} монет')
+                                await true_false(rez_pl, rez_opp)
                                 arr_opp.append(0)
                                 j += 1
                             else:
-                                print('\033[33m{}\033[0m'.format(
-                                    'Вы не доверяете друг другу, ни кто из вас не получает награды.'))
-                                print(
-                                    f'Cчет составляет: У вас {rez_pl} монет, у второго игрока {rez_opp} монет')
+                                await false_false(rez_pl, rez_opp)
                                 arr_opp.append(0)
                                 j += 1
-                        case 3:  # Подражатель
-                            if j == 0:
-                                if arr_pl[j] == 1:
-                                    rez_pl = rez_pl + 2
-                                    rez_opp = rez_opp + 2
-                                    print('\033[32m{}\033[0m'.format(
-                                        'Поздравляем, вы доверяете друг другу. Каждый игрок получает в награду по 2 монеты.'))
-                                    print(
-                                        f'Счет составляет: У вас {rez_pl} монет, у второго игрока {rez_opp} монет')
-                                    arr_opp.append(1)
-                                    j += 1
-                                else:
-                                    rez_pl = rez_pl + 3
-                                    print('\033[35m{}\033[0m'.format(
-                                        'Вам удалось обмануть другого игрока. Вы получаете в награду 3 монеты, другой игрок ничего не получает.'))
-                                    print(
-                                        f'Счет составляет: У вас {rez_pl} монет, у второго игрока {rez_opp} монет')
-                                    arr_opp.append(1)
-                                    j += 1
-                            else:
-                                if arr_pl[j] == 1 and arr_pl[j-1] == 1:
-                                    rez_pl = rez_pl + 2
-                                    rez_opp = rez_opp + 2
-                                    print('\033[32m{}\033[0m'.format(
-                                        'Поздравляем, вы доверяете друг другу. Каждый игрок получает в награду по 2 монеты.'))
-                                    print(
-                                        f'Счет составляет: У вас {rez_pl} монет, у второго игрока {rez_opp} монет')
-                                    arr_opp.append(1)
-                                    j += 1
-                                elif arr_pl[j] == 1 and arr_pl[j-1] == 0:
-                                    rez_opp = rez_opp + 3
-                                    print('\033[31m{}\033[0m'.format(
-                                        'Сожалеем Вас обманули. Вы не получаете награды, другой игрок получает в награду 3 монеты.'))
-                                    print(
-                                        f'Счет составляет: У вас {rez_pl} монет, у второго игрока {rez_opp} монет')
-                                    arr_opp.append(0)
-                                    j += 1
-                                elif arr_pl[j] == 0 and arr_pl[j-1] == 1:
-                                    rez_pl = rez_pl + 3
-                                    print('\033[35m{}\033[0m'.format(
-                                        'Вам удалось обмануть другого игрока. Вы получаете в награду 3 монеты, другой игрок ничего не получает.'))
-                                    print(
-                                        f'Счет составляет: У вас {rez_pl} монет, у второго игрока {rez_opp} монет')
-                                    arr_opp.append(1)
-                                    j += 1
-                                elif arr_pl[j] == 0 and arr_pl[j-1] == 0:
-                                    print('\033[33m{}\033[0m'.format(
-                                        'Вы не доверяете друг другу, ни кто из вас не получает награды.'))
-                                    print(
-                                        f'Cчет составляет: У вас {rez_pl} монет, у второго игрока {rez_opp} монет')
-                                    arr_opp.append(0)
-                                    j += 1
-                        case 4:  # Злопамятный
-                            if arr_pl[j] == 1 and 0 not in arr_pl:
-                                rez_pl = rez_pl + 2
-                                rez_opp = rez_opp + 2
-                                print('\033[32m{}\033[0m'.format(
-                                    'Поздравляем, вы доверяете друг другу. Каждый игрок получает в награду по 2 монеты.'))
-                                print(
-                                    f'Счет составляет: У вас {rez_pl} монет, у второго игрока {rez_opp} монет')
-                                arr_opp.append(1)
-                                j += 1
-                            elif arr_pl[j] == 0 and sum(arr_pl) == len(arr_pl)-1:
-                                rez_pl = rez_pl + 3
-                                print('\033[35m{}\033[0m'.format(
-                                    'Вам удалось обмануть другого игрока. Вы получаете в награду 3 монеты, другой игрок ничего не получает.'))
-                                print(
-                                    f'Счет составляет: У вас {rez_pl} монет, у второго игрока {rez_opp} монет')
-                                arr_opp.append(1)
-                                j += 1
-                            elif arr_pl[j] == 1 and sum(arr_pl) < len(arr_pl):
-                                rez_opp = rez_opp + 3
-                                print('\033[31m{}\033[0m'.format(
-                                    'Сожалеем Вас обманули. Вы не получаете награды, другой игрок получает в награду 3 монеты.'))
-                                print(
-                                    f'Счет составляет: У вас {rez_pl} монет, у второго игрока {rez_opp} монет')
-                                arr_opp.append(0)
-                                j += 1
-                            elif arr_pl[j] == 0 and sum(arr_pl) < len(arr_pl) - 1:
-                                print('\033[33m{}\033[0m'.format(
-                                    'Вы не доверяете друг другу, ни кто из вас не получает награды.'))
-                                print(
-                                    f'Cчет составляет: У вас {rez_pl} монет, у второго игрока {rez_opp} монет')
-                                arr_opp.append(0)
-                                j += 1
-                        case 5:  # Детектив
-                            match(j):
-                                case 0:
-                                    if arr_pl[j] == 0:
-                                        rez_pl = rez_pl + 3
-                                        print('\033[35m{}\033[0m'.format(
-                                            'Вам удалось обмануть другого игрока. Вы получаете в награду 3 монеты, другой игрок ничего не получает.'))
-                                        print(
-                                            f'Счет составляет: У вас {rez_pl} монет, у второго игрока {rez_opp} монет')
-                                        arr_opp.append(1)
-                                        j += 1
-                                    else:
-                                        rez_pl = rez_pl + 2
-                                        rez_opp = rez_opp + 2
-                                        print('\033[32m{}\033[0m'.format(
-                                            'Поздравляем, вы доверяете друг другу. Каждый игрок получает в награду по 2 монеты.'))
-                                        print(
-                                            f'Счет составляет: У вас {rez_pl} монет, у второго игрока {rez_opp} монет')
-                                        arr_opp.append(1)
-                                        j += 1
-                                case 1:
-                                    if arr_pl[j] == 0:
-                                        print('\033[33m{}\033[0m'.format(
-                                            'Вы не доверяете друг другу, ни кто из вас не получает награды.'))
-                                        arr_opp.append(0)
-                                        j += 1
-                                    else:
-                                        rez_opp = rez_opp + 3
-                                        print('\033[31m{}\033[0m'.format(
-                                            'Сожалеем Вас обманули. Вы не получаете награды, другой игрок получает в награду 3 монеты.'))
-                                        print(
-                                            f'Счет составляет: У вас {rez_pl} монет, у второго игрока {rez_opp} монет')
-                                        arr_opp.append(0)
-                                        j += 1
-                                case 2:
-                                    if arr_pl[j] == 0:
-                                        rez_pl = rez_pl + 3
-                                        print('\033[35m{}\033[0m'.format(
-                                            'Вам удалось обмануть другого игрока. Вы получаете в награду 3 монеты, другой игрок ничего не получает.'))
-                                        print(
-                                            f'Счет составляет: У вас {rez_pl} монет, у второго игрока {rez_opp} монет')
-                                        arr_opp.append(1)
-                                        j += 1
-                                    else:
-                                        rez_pl = rez_pl + 2
-                                        rez_opp = rez_opp + 2
-                                        print('\033[32m{}\033[0m'.format(
-                                            'Поздравляем, вы доверяете друг другу. Каждый игрок получает в награду по 2 монеты.'))
-                                        print(
-                                            f'Счет составляет: У вас {rez_pl} монет, у второго игрока {rez_opp} монет')
-                                        arr_opp.append(1)
-                                        j += 1
-                                case 3:
-                                    if arr_pl[j] == 0:
-                                        rez_pl = rez_pl + 3
-                                        print('\033[35m{}\033[0m'.format(
-                                            'Вам удалось обмануть другого игрока. Вы получаете в награду 3 монеты, другой игрок ничего не получает.'))
-                                        print(
-                                            f'Счет составляет: У вас {rez_pl} монет, у второго игрока {rez_opp} монет')
-                                        arr_opp.append(1)
-                                        j += 1
-                                    else:
-                                        rez_pl = rez_pl + 2
-                                        rez_opp = rez_opp + 2
-                                        print('\033[32m{}\033[0m'.format(
-                                            'Поздравляем, вы доверяете друг другу. Каждый игрок получает в награду по 2 монеты.'))
-                                        print(
-                                            f'Счет составляет: У вас {rez_pl} монет, у второго игрока {rez_opp} монет')
-                                        arr_opp.append(1)
-                                        j += 1
-                                case _:
-                                    if arr_pl[2] == 0:
-                                        if arr_pl[j] == 1 and arr_pl[j-1] == 1:
-                                            rez_pl = rez_pl + 2
-                                            rez_opp = rez_opp + 2
-                                            print('\033[32m{}\033[0m'.format(
-                                                'Поздравляем, вы доверяете друг другу. Каждый игрок получает в награду по 2 монеты.'))
-                                            print(
-                                                f'Счет составляет: У вас {rez_pl} монет, у второго игрока {rez_opp} монет')
-                                            arr_opp.append(1)
-                                            j += 1
-                                        elif arr_pl[j] == 1 and arr_pl[j-1] == 0:
-                                            rez_opp = rez_opp + 3
-                                            print('\033[31m{}\033[0m'.format(
-                                                'Сожалеем Вас обманули. Вы не получаете награды, другой игрок получает в награду 3 монеты.'))
-                                            print(
-                                                f'Счет составляет: У вас {rez_pl} монет, у второго игрока {rez_opp} монет')
-                                            arr_opp.append(0)
-                                            j += 1
-                                        elif arr_pl[j] == 0 and arr_pl[j-1] == 1:
-                                            rez_pl = rez_pl + 3
-                                            print('\033[35m{}\033[0m'.format(
-                                                'Вам удалось обмануть другого игрока. Вы получаете в награду 3 монеты, другой игрок ничего не получает.'))
-                                            print(
-                                                f'Счет составляет: У вас {rez_pl} монет, у второго игрока {rez_opp} монет')
-                                            arr_opp.append(1)
-                                            j += 1
-                                        elif arr_pl[j] == 0 and arr_pl[j-1] == 0:
-                                            print('\033[33m{}\033[0m'.format(
-                                                'Вы не доверяете друг другу, ни кто из вас не получает награды.'))
-                                            print(
-                                                f'Cчет составляет: У вас {rez_pl} монет, у второго игрока {rez_opp} монет')
-                                            arr_opp.append(0)
-                                            j += 1
-                                    else:
-                                        if arr_pl[j] == 1:
-                                            rez_opp = rez_opp + 3
-                                            print('\033[31m{}\033[0m'.format(
-                                                'Сожалеем Вас обманули. Вы не получаете награды, другой игрок получает в награду 3 монеты.'))
-                                            print(
-                                                f'Счет составляет: У вас {rez_pl} монет, у второго игрока {rez_opp} монет')
-                                            arr_opp.append(0)
-                                            j += 1
-                                        else:
-                                            print('\033[33m{}\033[0m'.format(
-                                                'Вы не доверяете друг другу, ни кто из вас не получает награды.'))
-                                            print(
-                                                f'Cчет составляет: У вас {rez_pl} монет, у второго игрока {rez_opp} монет')
-                                            arr_opp.append(0)
-                                            j += 1
-                    s_pl = s_pl + rez_pl
-                    s_opp = s_opp + rez_opp
-                    roun += 1
-                    await(f'---------------\nРезультаты раунда {roun+1}:\
-            \nКоличество Ваших монет - {rez_pl} \nКоличество монет у другого игрока - {rez_opp}\
-            \nКоличество монет по результатам {roun+1} раундов: У вас {s_pl}, у другого игрока {s_opp}\n---------------')
-                    logging.info(
-                    f'{opp} 1-Наивный, 2-Обманщик, 3-Подражатель, 4-Злопамятный, 5- Детектив')
-                    logging.info(f'Ходы игрока\t\t{arr_pl}, очки игрока {rez_pl}')
-                    logging.info(
-                    f'Ходы соперника\t{arr_opp}, очки соперника {rez_opp}')
-                    arr_pl.clear()
-                    arr_opp.clear()
-                
-            await(f'\nРезультаты игры:\
-                    \nКоличество Ваших монет - {s_pl} \nКоличество монет у другого игрока - {s_opp}')
-            if s_pl > s_opp:
-                await('Поздравляем, вы выиграли')
-            if s_pl < s_opp:
-                await('Сожалеем Вы проиграли.')
-            if s_pl == s_opp:
-                await('"Победила Дружба"')
+        if j < 10:
+            await bot.send_message(chat_id=message.chat.id, text=('Сделайте следующий ход'))
+        else:
+            logging.info(
+                f'{opp} 1-Наивный, 2-Обманщик, 3-Подражатель, 4-Злопамятный, 5- Детектив')
+            logging.info(
+                f'Ходы игрока\t{arr_pl}, очки игрока {rez_pl}')
+            logging.info(
+                f'Ходы соперника\t{arr_opp}, очки соперника {rez_opp}')
+            if rez_pl > rez_opp:
+                await bot.send_message(chat_id=message.chat.id, text=('Поздравляем, вы выиграли'))
+            if rez_pl < rez_opp:
+                await bot.send_message(chat_id=message.chat.id, text=('Сожалеем Вы проиграли.'))
+            if rez_pl == rez_opp:
+                await bot.send_message(chat_id=message.chat.id, text=('"Победила Дружба"'))
+            await bot.send_message(chat_id=message.chat.id, text='Для продолжения игры, просто сделай ход')
+            j, rez_pl, rez_opp = 0, 0, 0
+            arr_pl.clear()
+            arr_opp.clear()
+
+    async def false_false(x, y):
+        await bot.send_message(chat_id=message.chat.id, text='Мы не доверяем друг другу, ни кто из нас не получает награды.')
+        await bot.send_message(chat_id=message.chat.id, text=f'Cчет составляет: Игрок {x} монет, Бот {y} монет')
+
+    async def true_false(x, y):
+        await bot.send_message(chat_id=message.chat.id, text='Сожалею, я Вас обманул. Вы не получаете награды, я получаю в награду 3 монеты.')
+        await bot.send_message(chat_id=message.chat.id, text=f'Cчет составляет: Игрок {x} монет, Бот {y} монет')
+
+    async def false_true(x, y):
+        await bot.send_message(chat_id=message.chat.id, text='Вам удалось обмануть меня. Вы получаете в награду 3 монеты, я ничего не получаю.')
+        await bot.send_message(chat_id=message.chat.id, text=f'Cчет составляет: Игрок {x} монет, Бот {y} монет')
+
+    async def true_true(x, y):
+        await bot.send_message(chat_id=message.chat.id, text='Хорошо, мы доверяем друг другу. Каждый из нас получает в награду по 2 монеты.')
+        await bot.send_message(chat_id=message.chat.id, text=f'Счет составляет: Игрок {x} монет, Бот {y} монет')
 
 
 print('Server  starting')
