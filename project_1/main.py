@@ -6,6 +6,7 @@ import asyncio
 import logging
 from openpyxl import load_workbook
 import random
+import sqlite3
 
 
 ENC = 'utf-8'
@@ -13,27 +14,44 @@ FORMAT_INFO = '%(asctime)s, %(module)s, %(funcName)s, %(name)s, --> %(message)s'
 
 logging.basicConfig(format=FORMAT_INFO, filename='project_1/log.txt',
                     filemode='a', encoding=ENC, level=logging.INFO, datefmt='%m/%d/%Y %H:%M:%S')
+
 path = 'project_1/token_bot.config'  # файл с Токеном
 d = open(path, 'r', encoding=ENC)
 key = d.readline()
 bot = Bot(token=key)
 dp = Dispatcher(bot)
+
 f_csv = 'project_1/phonebook_ooo.csv'
 wb = load_workbook('project_1/phonebook_ooo.xlsx')
 sheets = wb.sheetnames
 sheet = wb[sheets[0]]
 
+conn = sqlite3.connect('project_1/Users.db')
+cur = conn.cursor()
+# открываем базу
+with conn:
+    data = conn.execute("select count(*) from sqlite_master where type='table' and name='users'")
+    for row in data:
+        if row[0] == 0:
+            with conn:
+                conn.execute("""CREATE TABLE users (chat_id VARCHAR(20) PRIMARY KEY,first_name VARCHAR(30),username VARCHAR(30));""")
 
 @dp.message_handler(commands='start')
 @dp.message_handler(text='Главная')
 async def cmd_start(message: types.Message):
-    logging.info(message.text)
+    logging.info(message)
+    if not cur.execute(f'''select chat_id From users
+                        where chat_id = {message.chat.id} ''').fetchall():
+        cur.execute("INSERT INTO users(chat_id, first_name, username)"
+                    "VALUES(?, ?, ?)",
+                    (message.chat.id, message.chat.first_name, message.chat.username))
+        conn.commit()
     keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
     buttons = ['Телефонный справочник', 'Калькулятор']
     keyboard.add(*buttons)
     Game = types.KeyboardButton('Игра в монетки')
     keyboard.row(Game)
-    await bot.send_message(chat_id=message.chat.id, text='Что запустить?', reply_markup=keyboard)
+    await bot.send_message(chat_id=message.chat.id, text=(f'Привет {message.chat.first_name}. Что запустить?'), reply_markup=keyboard)
 
 
 @dp.message_handler(text='Телефонный справочник')
