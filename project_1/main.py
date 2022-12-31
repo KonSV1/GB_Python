@@ -131,7 +131,7 @@ async def inp(message: types.Message):
 
 @dp.message_handler(text='Игра в монетки')
 async def note(message: types.Message):
-    opp = int(random.randint(1, 5))
+    opp = int(random.randint(1, 6))
     arr_pl = []
     arr_opp = []
     rez_pl, rez_opp, j = 0, 0, 0
@@ -139,7 +139,7 @@ async def note(message: types.Message):
 который два игрока по очереди могут опустить (Доверие) \
 или не опускать (Обман) монетку.\n- Если оба игрока доверяют друг другу (оба опустили в автомат по монетке) то каждый из них\
 получает в награду по 2 монеты.\n- Если оба игрока обманули друг друга (ни кто из обоих игроков не опустил в автомат монетку),\
-то ни один из игроков награды не получает.\n- Если один из игроков обманывает, а второй доверяет, то обманщик получает в\
+то ни один из игроков награды не получает.\n- Если один из игроков обманывает, а второй доверяет, то обманщик получает в \
 награду три монеты, доверившийся игрок награды не получает.\
 \nПобеждает тот игрок, у которго по итогу 10-ти ходов больше монет.')
     trust = types.KeyboardButton('Опустить монетку')
@@ -317,15 +317,33 @@ async def note(message: types.Message):
                                 await false_false(rez_pl, rez_opp)
                                 arr_opp.append(0)
                                 j += 1
+            case 6: # Обезьяна
+                arr_opp.append(int(random.randint(0,1)))
+                if arr_pl[j] == 0 and arr_opp[j] == 0:
+                    await false_false(rez_pl, rez_opp)
+                    j +=1
+                elif arr_pl[j] == 1 and arr_opp[j] == 1:
+                    rez_pl = rez_pl + 2
+                    rez_opp = rez_opp + 2
+                    await true_true(rez_pl, rez_opp)
+                    j += 1
+                elif arr_pl[j] == 1 and arr_opp[j] == 0:
+                    rez_opp = rez_opp + 3
+                    await true_false(rez_pl, rez_opp)
+                    j += 1
+                elif arr_pl[j] == 0 and arr_opp[j] == 1:
+                    rez_pl = rez_pl + 3
+                    await false_true(rez_pl, rez_opp)
+                    j += 1                  
         if j < 10:
             await bot.send_message(chat_id=message.chat.id, text=('Сделайте следующий ход'))
         else:
             logging.info(
                 f'{opp} 1-Наивный, 2-Обманщик, 3-Подражатель, 4-Злопамятный, 5- Детектив')
             logging.info(
-                f'Ходы игрока\t{arr_pl}, очки игрока {rez_pl}')
+                f'Игрок\t\t{arr_pl}, очки игрока {rez_pl}')
             logging.info(
-                f'Ходы соперника\t{arr_opp}, очки соперника {rez_opp}')
+                f'Соперник\t{arr_opp}, очки соперника {rez_opp}')
             if rez_pl > rez_opp:
                 await bot.send_message(chat_id=message.chat.id, text=('Поздравляем, вы выиграли'))
             if rez_pl < rez_opp:
