@@ -28,13 +28,15 @@ sheet = wb[sheets[0]]
 
 conn = sqlite3.connect('project_1/Users.db')
 cur = conn.cursor()
-# открываем базу
 with conn:
-    data = conn.execute("select count(*) from sqlite_master where type='table' and name='users'")
+    data = conn.execute(
+        "select count(*) from sqlite_master where type='table' and name='users'")
     for row in data:
         if row[0] == 0:
             with conn:
-                conn.execute("""CREATE TABLE users (chat_id VARCHAR(20) PRIMARY KEY,first_name VARCHAR(30),username VARCHAR(30));""")
+                conn.execute(
+                    """CREATE TABLE users (chat_id VARCHAR(20) PRIMARY KEY,first_name VARCHAR(30),username VARCHAR(30));""")
+
 
 @dp.message_handler(commands='start')
 @dp.message_handler(text='Главная')
@@ -55,7 +57,7 @@ async def cmd_start(message: types.Message):
 
 
 @dp.message_handler(text='Телефонный справочник')
-async def start(message: types.Message):
+async def phone(message: types.Message):
     logging.info(message.text)
     home = types.KeyboardButton('Главная')
     management = types.KeyboardButton('Руководство')
@@ -131,7 +133,7 @@ async def inp(message: types.Message):
     mes = []
 
     @dp.message_handler(text=['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.', '+', '-', '/', '*', 'del', '(', ')', '='])
-    async def s(message: types.Message):
+    async def calc(message: types.Message):
         if message.text != '=':
             if message.text != 'del':
                 mes.append(message.text)
@@ -149,10 +151,10 @@ async def inp(message: types.Message):
 
 @dp.message_handler(text='Игра в монетки')
 async def note(message: types.Message):
-    opp = int(random.randint(1, 6))
+    opp = int(random.randint(1, 7))
     arr_pl = []
-    arr_opp = []
-    rez_pl, rez_opp, j = 0, 0, 0
+    arr_bot = []
+    rez_pl, rez_bot, j = 0, 0, 0
     await message.answer(text='Предлагаю сыграть со мной в игру на доверие. Правила игры просты:\nЕсть некий автомат в \
 который два игрока по очереди могут опустить (Доверие) \
 или не опускать (Обман) монетку.\n- Если оба игрока доверяют друг другу (оба опустили в автомат по монетке) то каждый из них\
@@ -169,7 +171,7 @@ async def note(message: types.Message):
 
     @dp.message_handler(text=['Опустить монетку', 'Обмануть'])
     async def game_start(message: types.Message,):
-        nonlocal j, rez_opp, rez_pl
+        nonlocal j, rez_bot, rez_pl
         logging.info(message.text)
         match (message.text):
             case 'Обмануть':
@@ -179,199 +181,275 @@ async def note(message: types.Message):
         logging.info(arr_pl)
         await bot.send_message(chat_id=message.chat.id, text=(f'Ход: {j+1}'))
         match (opp):
-            case 1:  # Наивный
-                arr_opp.append(1)
+            case 1:  # Наивный (всегда доверяет)
+                arr_bot.append(1)
                 if arr_pl[j] == 1:
                     rez_pl = rez_pl + 2
-                    rez_opp = rez_opp + 2
+                    rez_bot = rez_bot + 2
                     j += 1
-                    await true_true(rez_pl, rez_opp)
+                    await true_true(rez_pl, rez_bot)
                 else:
                     rez_pl = rez_pl + 3
                     j += 1
-                    await false_true(rez_pl, rez_opp)
-            case 2:  # Обманщик
+                    await false_true(rez_pl, rez_bot)
+            case 2:  # Обманщик (всегда обманывает)
                 if arr_pl[j] == 1:
-                    rez_opp = rez_opp + 3
-                    await true_false(rez_pl, rez_opp)
-                    arr_opp.append(0)
+                    rez_bot = rez_bot + 3
+                    await true_false(rez_pl, rez_bot)
+                    arr_bot.append(0)
                     j += 1
                 else:
-                    await false_false(rez_pl, rez_opp)
-                    arr_opp.append(0)
+                    await false_false(rez_pl, rez_bot)
+                    arr_bot.append(0)
                     j += 1
-            case 3:  # Подражатель
+            case 3:  # Подражатель (начинает с доверия далее повторяет ваш предыдущий ход)
                 if j == 0:
                     if arr_pl[j] == 1:
                         rez_pl = rez_pl + 2
-                        rez_opp = rez_opp + 2
-                        await true_true(rez_pl, rez_opp)
-                        arr_opp.append(1)
+                        rez_bot = rez_bot + 2
+                        await true_true(rez_pl, rez_bot)
+                        arr_bot.append(1)
                         j += 1
                     else:
                         rez_pl = rez_pl + 3
-                        await false_true(rez_pl, rez_opp)
-                        arr_opp.append(1)
+                        await false_true(rez_pl, rez_bot)
+                        arr_bot.append(1)
                         j += 1
                 else:
                     if arr_pl[j] == 1 and arr_pl[j-1] == 1:
                         rez_pl = rez_pl + 2
-                        rez_opp = rez_opp + 2
-                        await true_true(rez_pl, rez_opp)
-                        arr_opp.append(1)
+                        rez_bot = rez_bot + 2
+                        await true_true(rez_pl, rez_bot)
+                        arr_bot.append(1)
                         j += 1
                     elif arr_pl[j] == 1 and arr_pl[j-1] == 0:
-                        rez_opp = rez_opp + 3
-                        await true_false(rez_pl, rez_opp)
-                        arr_opp.append(0)
+                        rez_bot = rez_bot + 3
+                        await true_false(rez_pl, rez_bot)
+                        arr_bot.append(0)
                         j += 1
                     elif arr_pl[j] == 0 and arr_pl[j-1] == 1:
                         rez_pl = rez_pl + 3
-                        await false_true(rez_pl, rez_opp)
-                        arr_opp.append(1)
+                        await false_true(rez_pl, rez_bot)
+                        arr_bot.append(1)
                         j += 1
                     elif arr_pl[j] == 0 and arr_pl[j-1] == 0:
-                        await false_false(rez_pl, rez_opp)
-                        arr_opp.append(0)
+                        await false_false(rez_pl, rez_bot)
+                        arr_bot.append(0)
                         j += 1
-            case 4:  # Злопамятный
+            # Злопамятный (начинает с доверия, если хоть раз был обманут обманывает до конца)
+            case 4:
                 if arr_pl[j] == 1 and 0 not in arr_pl:
                     rez_pl = rez_pl + 2
-                    rez_opp = rez_opp + 2
-                    await true_true(rez_pl, rez_opp)
-                    arr_opp.append(1)
+                    rez_bot = rez_bot + 2
+                    await true_true(rez_pl, rez_bot)
+                    arr_bot.append(1)
                     j += 1
                 elif arr_pl[j] == 0 and sum(arr_pl) == len(arr_pl)-1:
                     rez_pl = rez_pl + 3
-                    await false_true(rez_pl, rez_opp)
-                    arr_opp.append(1)
+                    await false_true(rez_pl, rez_bot)
+                    arr_bot.append(1)
                     j += 1
                 elif arr_pl[j] == 1 and sum(arr_pl) < len(arr_pl):
-                    rez_opp = rez_opp + 3
-                    await true_false(rez_pl, rez_opp)
-                    arr_opp.append(0)
+                    rez_bot = rez_bot + 3
+                    await true_false(rez_pl, rez_bot)
+                    arr_bot.append(0)
                     j += 1
                 elif arr_pl[j] == 0 and sum(arr_pl) < len(arr_pl) - 1:
-                    await false_false(rez_pl, rez_opp)
-                    arr_opp.append(0)
+                    await false_false(rez_pl, rez_bot)
+                    arr_bot.append(0)
                     j += 1
-            case 5:  # Детектив
+            case 5:  # Детектив (1.Доверие, 2.Обман, 3. Доверие, 4. Доверие если в ответ на 2 ход обман - далее стратегия подражателя, если нет - Обманщик)
                 match(j):
-                    case 0:
+                    case 0:  # Ход 1
                         if arr_pl[j] == 0:
                             rez_pl = rez_pl + 3
-                            await false_true(rez_pl, rez_opp)
-                            arr_opp.append(1)
+                            await false_true(rez_pl, rez_bot)
+                            arr_bot.append(1)
                             j += 1
                         else:
                             rez_pl = rez_pl + 2
-                            rez_opp = rez_opp + 2
-                            await true_true(rez_pl, rez_opp)
-                            arr_opp.append(1)
+                            rez_bot = rez_bot + 2
+                            await true_true(rez_pl, rez_bot)
+                            arr_bot.append(1)
                             j += 1
-                    case 1:
+                    case 1:  # Ход 2
                         if arr_pl[j] == 0:
-                            await false_false(rez_pl, rez_opp)
-                            arr_opp.append(0)
+                            await false_false(rez_pl, rez_bot)
+                            arr_bot.append(0)
                             j += 1
                         else:
-                            rez_opp = rez_opp + 3
-                            await true_false(rez_pl, rez_opp)
-                            arr_opp.append(0)
+                            rez_bot = rez_bot + 3
+                            await true_false(rez_pl, rez_bot)
+                            arr_bot.append(0)
                             j += 1
-                    case 2:
+                    case 2:  # Ход 3
                         if arr_pl[j] == 0:
                             rez_pl = rez_pl + 3
-                            await false_true(rez_pl, rez_opp)
-                            arr_opp.append(1)
+                            await false_true(rez_pl, rez_bot)
+                            arr_bot.append(1)
                             j += 1
                         else:
                             rez_pl = rez_pl + 2
-                            rez_opp = rez_opp + 2
-                            await true_true(rez_pl, rez_opp)
-                            arr_opp.append(1)
+                            rez_bot = rez_bot + 2
+                            await true_true(rez_pl, rez_bot)
+                            arr_bot.append(1)
                             j += 1
-                    case 3:
+                    case 3:  # Ход 4
                         if arr_pl[j] == 0:
                             rez_pl = rez_pl + 3
-                            await false_true(rez_pl, rez_opp)
-                            arr_opp.append(1)
+                            await false_true(rez_pl, rez_bot)
+                            arr_bot.append(1)
                             j += 1
                         else:
                             rez_pl = rez_pl + 2
-                            rez_opp = rez_opp + 2
-                            await true_true(rez_pl, rez_opp)
-                            arr_opp.append(1)
+                            rez_bot = rez_bot + 2
+                            await true_true(rez_pl, rez_bot)
+                            arr_bot.append(1)
                             j += 1
-                    case _:
-                        if arr_pl[2] == 0:
+                    case _:  # Ход 5 и далее
+                        if arr_pl[2] == 0:  # Выбрана стртегия Подражатель
                             if arr_pl[j] == 1 and arr_pl[j-1] == 1:
                                 rez_pl = rez_pl + 2
-                                rez_opp = rez_opp + 2
-                                await true_true(rez_pl, rez_opp)
-                                arr_opp.append(1)
+                                rez_bot = rez_bot + 2
+                                await true_true(rez_pl, rez_bot)
+                                arr_bot.append(1)
                                 j += 1
                             elif arr_pl[j] == 1 and arr_pl[j-1] == 0:
-                                rez_opp = rez_opp + 3
-                                await true_false(rez_pl, rez_opp)
-                                arr_opp.append(0)
+                                rez_bot = rez_bot + 3
+                                await true_false(rez_pl, rez_bot)
+                                arr_bot.append(0)
                                 j += 1
                             elif arr_pl[j] == 0 and arr_pl[j-1] == 1:
                                 rez_pl = rez_pl + 3
-                                await false_true(rez_pl, rez_opp)
-                                arr_opp.append(1)
+                                await false_true(rez_pl, rez_bot)
+                                arr_bot.append(1)
                                 j += 1
                             elif arr_pl[j] == 0 and arr_pl[j-1] == 0:
-                                await false_false(rez_pl, rez_opp)
-                                arr_opp.append(0)
+                                await false_false(rez_pl, rez_bot)
+                                arr_bot.append(0)
                                 j += 1
-                        else:
+                        else:  # Выбрана стртегия Обманщик
                             if arr_pl[j] == 1:
-                                rez_opp = rez_opp + 3
-                                await true_false(rez_pl, rez_opp)
-                                arr_opp.append(0)
+                                rez_bot = rez_bot + 3
+                                await true_false(rez_pl, rez_bot)
+                                arr_bot.append(0)
                                 j += 1
                             else:
-                                await false_false(rez_pl, rez_opp)
-                                arr_opp.append(0)
+                                await false_false(rez_pl, rez_bot)
+                                arr_bot.append(0)
                                 j += 1
-            case 6: # Обезьяна
-                arr_opp.append(int(random.randint(0,1)))
-                if arr_pl[j] == 0 and arr_opp[j] == 0:
-                    await false_false(rez_pl, rez_opp)
-                    j +=1
-                elif arr_pl[j] == 1 and arr_opp[j] == 1:
+            case 6:  # Обезьяна (случайный выбор хода)
+                arr_bot.append(int(random.randint(0, 1)))
+                if arr_pl[j] == 0 and arr_bot[j] == 0:
+                    await false_false(rez_pl, rez_bot)
+                    j += 1
+                elif arr_pl[j] == 1 and arr_bot[j] == 1:
                     rez_pl = rez_pl + 2
-                    rez_opp = rez_opp + 2
-                    await true_true(rez_pl, rez_opp)
+                    rez_bot = rez_bot + 2
+                    await true_true(rez_pl, rez_bot)
                     j += 1
-                elif arr_pl[j] == 1 and arr_opp[j] == 0:
-                    rez_opp = rez_opp + 3
-                    await true_false(rez_pl, rez_opp)
+                elif arr_pl[j] == 1 and arr_bot[j] == 0:
+                    rez_bot = rez_bot + 3
+                    await true_false(rez_pl, rez_bot)
                     j += 1
-                elif arr_pl[j] == 0 and arr_opp[j] == 1:
+                elif arr_pl[j] == 0 and arr_bot[j] == 1:
                     rez_pl = rez_pl + 3
-                    await false_true(rez_pl, rez_opp)
-                    j += 1                  
+                    await false_true(rez_pl, rez_bot)
+                    j += 1
+            # Подражатель_2 (начинает с доверия, обманывает после 2-х обманов противником)
+            case 7:
+                if j < 2:
+                    if arr_pl[j] == 1:
+                        rez_pl = rez_pl + 2
+                        rez_bot = rez_bot + 2
+                        await true_true(rez_pl, rez_bot)
+                        arr_bot.append(1)
+                        j += 1
+                    else:
+                        rez_pl = rez_pl + 3
+                        await false_true(rez_pl, rez_bot)
+                        arr_bot.append(1)
+                        j += 1
+                else:
+                    if (arr_pl[j] == 1 and arr_pl[j-1] == 1 and arr_pl[j-2] == 1) or (
+                            arr_pl[j] == 1 and arr_pl[j-1] == 1 and arr_pl[j-2] == 0) or (
+                                arr_pl[j] == 1 and arr_pl[j-1] == 0 and arr_pl[j-2] == 1):
+                        rez_pl = rez_pl + 2
+                        rez_bot = rez_bot + 2
+                        await true_true(rez_pl, rez_bot)
+                        arr_bot.append(1)
+                        j += 1
+                    elif (arr_pl[j] == 0 and arr_pl[j-1] == 1 and arr_pl[j-2] == 1) or (
+                            arr_pl[j] == 0 and arr_pl[j-1] == 0 and arr_pl[j-2] == 1) or (
+                                arr_pl[j] == 0 and arr_pl[j-1] == 1 and arr_pl[j-2] == 0):
+                        rez_pl = rez_pl + 3
+                        await false_true(rez_pl, rez_bot)
+                        arr_bot.append(1)
+                        j += 1
+                    elif arr_pl[j] == 1 and arr_pl[j-1] == 0 and arr_pl[j-2] == 0:
+                        rez_bot = rez_bot + 3
+                        await true_false(rez_pl, rez_bot)
+                        arr_bot.append(0)
+                        j += 1
+                    elif arr_pl[j] == 0 and arr_pl[j-1] == 0 and arr_pl[j-2] == 0:
+                        await false_false(rez_pl, rez_bot)
+                        arr_bot.append(0)
+                        j += 1
+            case 8:  # Простак (начинает с доверия, далее повторяет свой предыдущий ход, при обмане меняеет)
+                if j == 0:
+                    if arr_pl[0] == 1:
+                        rez_pl = rez_pl + 2
+                        rez_bot = rez_bot + 2
+                        await true_true(rez_pl, rez_bot)
+                        arr_bot.append(1)
+                        j += 1
+                    else:
+                        rez_pl = rez_pl + 3
+                        await false_true(rez_pl, rez_bot)
+                        arr_bot.append(1)
+                        j += 1
+                else:
+                    if arr_pl[j] == 1:
+                        if (arr_bot[j-1] == 1 and arr_pl[j-1] == 1) or (arr_bot[j-1] == 0 and arr_pl[j-1] == 0):
+                            rez_pl = rez_pl + 2
+                            rez_bot = rez_bot + 2
+                            await true_true(rez_pl, rez_bot)
+                            arr_bot.append(1)
+                            j += 1
+                        else: # (arr_bot[j-1] == 1 and arr_pl[j-1] == 0) or (arr_bot[j-1] == 0 and arr_pl[j-1] == 1):
+                            rez_bot = rez_bot + 3
+                            await true_false(rez_pl, rez_bot)
+                            arr_bot.append(0)
+                            j += 1
+                    else: # arr_pl[j] == 0:
+                        if (arr_bot[j-1] == 1 and arr_pl[j-1] == 1) or (arr_bot[j-1] == 0 and arr_pl[j-1] == 0):
+                            rez_pl = rez_pl + 3
+                            await false_true(rez_pl, rez_bot)
+                            arr_bot.append(1)
+                            j += 1
+                        else:  # (arr_bot[j-1] == 1 and arr_pl[j-1] == 0) or (arr_bot[j-1] == 0 and arr_pl[j-1] == 1):
+                            await false_false(rez_pl, rez_bot)
+                            arr_bot.append(0)
+                            j += 1
         if j < 10:
             await bot.send_message(chat_id=message.chat.id, text=('Сделайте следующий ход'))
         else:
             logging.info(
-                f'{opp} 1-Наивный, 2-Обманщик, 3-Подражатель, 4-Злопамятный, 5- Детектив')
+                f'{opp} 1-Наивный, 2-Обманщик, 3-Подражатель, 4-Злопамятный, 5-Детектив, 6-Обезьяна, 7-Подражатель_2, 8-Простой')
             logging.info(
                 f'Игрок\t\t{arr_pl}, очки игрока {rez_pl}')
             logging.info(
-                f'Соперник\t{arr_opp}, очки соперника {rez_opp}')
-            if rez_pl > rez_opp:
+                f'Соперник\t{arr_bot}, очки соперника {rez_bot}')
+            if rez_pl > rez_bot:
                 await bot.send_message(chat_id=message.chat.id, text=('Поздравляем, вы выиграли'))
-            if rez_pl < rez_opp:
+            if rez_pl < rez_bot:
                 await bot.send_message(chat_id=message.chat.id, text=('Сожалеем Вы проиграли.'))
-            if rez_pl == rez_opp:
+            if rez_pl == rez_bot:
                 await bot.send_message(chat_id=message.chat.id, text=('"Победила Дружба"'))
             await bot.send_message(chat_id=message.chat.id, text='Для продолжения игры, просто сделай ход')
-            j, rez_pl, rez_opp = 0, 0, 0
+            j, rez_pl, rez_bot = 0, 0, 0
             arr_pl.clear()
-            arr_opp.clear()
+            arr_bot.clear()
 
     async def false_false(x, y):
         await bot.send_message(chat_id=message.chat.id, text='Мы не доверяем друг другу, ни кто из нас не получает награды.')

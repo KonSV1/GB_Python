@@ -1,75 +1,240 @@
-12/31/2022 01:22:14, main, cmd_start, root, --> Главная
-12/31/2022 01:22:17, main, game_start, root, --> Опустить монетку
-12/31/2022 01:22:17, main, game_start, root, --> [1]
-12/31/2022 01:22:18, main, game_start, root, --> Опустить монетку
-12/31/2022 01:22:18, main, game_start, root, --> [1, 1]
-12/31/2022 01:22:19, main, game_start, root, --> Опустить монетку
-12/31/2022 01:22:19, main, game_start, root, --> [1, 1, 1]
-12/31/2022 01:22:20, main, game_start, root, --> Опустить монетку
-12/31/2022 01:22:20, main, game_start, root, --> [1, 1, 1, 1]
-12/31/2022 01:22:21, main, game_start, root, --> Опустить монетку
-12/31/2022 01:22:21, main, game_start, root, --> [1, 1, 1, 1, 1]
-12/31/2022 01:22:23, main, game_start, root, --> Опустить монетку
-12/31/2022 01:22:23, main, game_start, root, --> [1, 1, 1, 1, 1, 1]
-12/31/2022 01:22:24, main, game_start, root, --> Опустить монетку
-12/31/2022 01:22:24, main, game_start, root, --> [1, 1, 1, 1, 1, 1, 1]
-12/31/2022 01:22:25, main, game_start, root, --> Опустить монетку
-12/31/2022 01:22:25, main, game_start, root, --> [1, 1, 1, 1, 1, 1, 1, 1]
-12/31/2022 01:22:26, main, game_start, root, --> Обмануть
-12/31/2022 01:22:26, main, game_start, root, --> [1, 1, 1, 1, 1, 1, 1, 1, 0]
-12/31/2022 01:22:27, main, game_start, root, --> Опустить монетку
-12/31/2022 01:22:27, main, game_start, root, --> [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
-12/31/2022 01:22:28, main, game_start, root, --> 5 1-Наивный, 2-Обманщик, 3-Подражатель, 4-Злопамятный, 5- Детектив
-12/31/2022 01:22:28, main, game_start, root, --> Ходы игрока	[1, 1, 1, 1, 1, 1, 1, 1, 0, 1], очки игрока 6
-12/31/2022 01:22:28, main, game_start, root, --> Ходы соперника	[1, 0, 1, 1, 0, 0, 0, 0, 0, 0], очки соперника 24
-12/31/2022 01:23:11, main, cmd_start, root, --> Главная
-12/31/2022 01:23:13, main, start, root, --> Телефонный справочник
-12/31/2022 01:23:15, main, select, root, --> Руководство
-12/31/2022 01:23:17, main, cmd_start, root, --> Главная
-12/31/2022 01:23:18, main, inp, root, --> Калькулятор
-12/31/2022 01:23:28, main, s, root, --> ['4', '5', '8', '/', '2', '3'] = 19.91304347826087
-12/31/2022 01:23:32, main, cmd_start, root, --> Главная
-12/31/2022 01:24:27, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Polling is stopped.
-12/31/2022 01:24:27, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
-12/31/2022 01:24:27, base_events, default_exception_handler, asyncio, --> Unclosed client session
-client_session: <aiohttp.client.ClientSession object at 0x000001E8576FAF50>
-12/31/2022 01:38:31, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
-12/31/2022 01:42:00, main, start, root, --> Телефонный справочник
-12/31/2022 01:42:02, main, cmd_start, root, --> Главная
-12/31/2022 01:42:05, main, start, root, --> Телефонный справочник
-12/31/2022 01:42:07, main, select, root, --> Руководство
-12/31/2022 01:42:09, main, select, root, --> Аппарат при руководстве
-12/31/2022 01:42:12, main, cmd_start, root, --> Главная
-12/31/2022 01:42:16, main, inp, root, --> Калькулятор
-12/31/2022 01:42:24, main, s, root, --> ['2', '*', '2', '+', '3'] = 7
-12/31/2022 01:42:41, main, s, root, --> ['2', '*', '(', '2', '+', '3', ')'] = 10
-12/31/2022 01:43:02, main, s, root, --> ['5', '1', '/', '2'] = 25.5
-12/31/2022 01:43:05, main, cmd_start, root, --> Главная
-12/31/2022 01:43:10, main, game_start, root, --> Обмануть
-12/31/2022 01:43:10, main, game_start, root, --> [0]
-12/31/2022 01:43:14, main, game_start, root, --> Опустить монетку
-12/31/2022 01:43:14, main, game_start, root, --> [0, 1]
-12/31/2022 01:43:17, main, game_start, root, --> Опустить монетку
-12/31/2022 01:43:17, main, game_start, root, --> [0, 1, 1]
-12/31/2022 01:43:20, main, game_start, root, --> Опустить монетку
-12/31/2022 01:43:20, main, game_start, root, --> [0, 1, 1, 1]
-12/31/2022 01:43:23, main, game_start, root, --> Обмануть
-12/31/2022 01:43:23, main, game_start, root, --> [0, 1, 1, 1, 0]
-12/31/2022 01:43:27, main, game_start, root, --> Обмануть
-12/31/2022 01:43:27, main, game_start, root, --> [0, 1, 1, 1, 0, 0]
-12/31/2022 01:43:29, main, game_start, root, --> Опустить монетку
-12/31/2022 01:43:29, main, game_start, root, --> [0, 1, 1, 1, 0, 0, 1]
-12/31/2022 01:43:32, main, game_start, root, --> Обмануть
-12/31/2022 01:43:32, main, game_start, root, --> [0, 1, 1, 1, 0, 0, 1, 0]
-12/31/2022 01:43:34, main, game_start, root, --> Обмануть
-12/31/2022 01:43:34, main, game_start, root, --> [0, 1, 1, 1, 0, 0, 1, 0, 0]
-12/31/2022 01:43:35, main, game_start, root, --> Обмануть
-12/31/2022 01:43:35, main, game_start, root, --> [0, 1, 1, 1, 0, 0, 1, 0, 0, 0]
-12/31/2022 01:43:35, main, game_start, root, --> 1 1-Наивный, 2-Обманщик, 3-Подражатель, 4-Злопамятный, 5- Детектив
-12/31/2022 01:43:35, main, game_start, root, --> Ходы игрока	[0, 1, 1, 1, 0, 0, 1, 0, 0, 0], очки игрока 26
-12/31/2022 01:43:35, main, game_start, root, --> Ходы соперника	[1, 1, 1, 1, 1, 1, 1, 1, 1, 1], очки соперника 8
-12/31/2022 01:43:41, main, cmd_start, root, --> Главная
-12/31/2022 01:44:40, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Polling is stopped.
-12/31/2022 01:44:40, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
-12/31/2022 01:44:40, base_events, default_exception_handler, asyncio, --> Unclosed client session
-client_session: <aiohttp.client.ClientSession object at 0x000001A5FF2E5850>
+01/01/2023 09:48:50, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
+01/01/2023 09:48:51, main, inp, root, --> Калькулятор
+01/01/2023 09:49:49, main, s, root, --> ['2', '0', '2', '4', '/', '4'] = 506.0
+01/01/2023 09:49:57, main, cmd_start, root, --> {"message_id": 4441, "from": {"id": 5883862723, "is_bot": false, "first_name": "Sergei", "last_name": "K", "username": "Konishchev_SV", "language_code": "ru"}, "chat": {"id": 5883862723, "first_name": "Sergei", "last_name": "K", "username": "Konishchev_SV", "type": "private"}, "date": 1672566598, "text": "Главная"}
+01/01/2023 09:50:11, main, game_start, root, --> Обмануть
+01/01/2023 09:50:11, main, game_start, root, --> [0]
+01/01/2023 09:50:28, main, game_start, root, --> Опустить монетку
+01/01/2023 09:50:28, main, game_start, root, --> [0, 1]
+01/01/2023 09:50:34, main, game_start, root, --> Обмануть
+01/01/2023 09:50:34, main, game_start, root, --> [0, 1, 0]
+01/01/2023 09:50:37, main, game_start, root, --> Опустить монетку
+01/01/2023 09:50:37, main, game_start, root, --> [0, 1, 0, 1]
+01/01/2023 09:50:45, main, game_start, root, --> Опустить монетку
+01/01/2023 09:50:45, main, game_start, root, --> [0, 1, 0, 1, 1]
+01/01/2023 09:50:49, main, game_start, root, --> Обмануть
+01/01/2023 09:50:49, main, game_start, root, --> [0, 1, 0, 1, 1, 0]
+01/01/2023 09:50:52, main, game_start, root, --> Обмануть
+01/01/2023 09:50:52, main, game_start, root, --> [0, 1, 0, 1, 1, 0, 0]
+01/01/2023 09:50:55, main, game_start, root, --> Обмануть
+01/01/2023 09:50:55, main, game_start, root, --> [0, 1, 0, 1, 1, 0, 0, 0]
+01/01/2023 09:51:00, main, game_start, root, --> Опустить монетку
+01/01/2023 09:51:00, main, game_start, root, --> [0, 1, 0, 1, 1, 0, 0, 0, 1]
+01/01/2023 09:51:08, main, game_start, root, --> Опустить монетку
+01/01/2023 09:51:08, main, game_start, root, --> [0, 1, 0, 1, 1, 0, 0, 0, 1, 1]
+01/01/2023 09:51:08, main, game_start, root, --> 5 1-Наивный, 2-Обманщик, 3-Подражатель, 4-Злопамятный, 5- Детектив
+01/01/2023 09:51:08, main, game_start, root, --> Игрок		[0, 1, 0, 1, 1, 0, 0, 0, 1, 1], очки игрока 15
+01/01/2023 09:51:08, main, game_start, root, --> Соперник	[1, 0, 1, 1, 1, 1, 0, 0, 0, 1], очки соперника 12
+01/01/2023 09:51:33, main, cmd_start, root, --> {"message_id": 4497, "from": {"id": 5883862723, "is_bot": false, "first_name": "Sergei", "last_name": "K", "username": "Konishchev_SV", "language_code": "ru"}, "chat": {"id": 5883862723, "first_name": "Sergei", "last_name": "K", "username": "Konishchev_SV", "type": "private"}, "date": 1672566694, "text": "Главная"}
+01/01/2023 09:51:43, main, start, root, --> Телефонный справочник
+01/01/2023 09:51:47, main, select, root, --> Отдел 6
+01/02/2023 02:23:41, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
+01/02/2023 02:23:59, main, cmd_start, root, --> {"message_id": 4507, "from": {"id": 5116739545, "is_bot": false, "first_name": "Сергей", "last_name": "Конищев", "username": "Levin70", "language_code": "ru"}, "chat": {"id": 5116739545, "first_name": "Сергей", "last_name": "Конищев", "username": "Levin70", "type": "private"}, "date": 1672626240, "text": "/start", "entities": [{"type": "bot_command", "offset": 0, "length": 6}]}
+01/02/2023 02:24:06, main, game_start, root, --> Опустить монетку
+01/02/2023 02:24:06, main, game_start, root, --> [1]
+01/02/2023 02:24:09, main, game_start, root, --> Опустить монетку
+01/02/2023 02:24:09, main, game_start, root, --> [1, 1]
+01/02/2023 02:24:12, main, game_start, root, --> Опустить монетку
+01/02/2023 02:24:12, main, game_start, root, --> [1, 1, 1]
+01/02/2023 02:24:15, main, game_start, root, --> Обмануть
+01/02/2023 02:24:15, main, game_start, root, --> [1, 1, 1, 0]
+01/02/2023 02:24:18, main, game_start, root, --> Обмануть
+01/02/2023 02:24:18, main, game_start, root, --> [1, 1, 1, 0, 0]
+01/02/2023 02:24:22, main, game_start, root, --> Опустить монетку
+01/02/2023 02:24:22, main, game_start, root, --> [1, 1, 1, 0, 0, 1]
+01/02/2023 02:24:33, main, game_start, root, --> Опустить монетку
+01/02/2023 02:24:33, main, game_start, root, --> [1, 1, 1, 0, 0, 1, 1]
+01/02/2023 02:24:36, main, game_start, root, --> Опустить монетку
+01/02/2023 02:24:36, main, game_start, root, --> [1, 1, 1, 0, 0, 1, 1, 1]
+01/02/2023 02:24:39, main, game_start, root, --> Обмануть
+01/02/2023 02:24:39, main, game_start, root, --> [1, 1, 1, 0, 0, 1, 1, 1, 0]
+01/02/2023 02:24:42, main, game_start, root, --> Обмануть
+01/02/2023 02:24:42, main, game_start, root, --> [1, 1, 1, 0, 0, 1, 1, 1, 0, 0]
+01/02/2023 02:24:42, main, game_start, root, --> 7 1-Наивный, 2-Обманщик, 3-Подражатель, 4-Злопамятный, 5- Детектив
+01/02/2023 02:24:42, main, game_start, root, --> Игрок		[1, 1, 1, 0, 0, 1, 1, 1, 0, 0], очки игрока 25
+01/02/2023 02:24:42, main, game_start, root, --> Соперник	[1, 1, 1, 1, 1, 1, 1, 1, 1, 1], очки соперника 10
+01/02/2023 02:27:10, main, game_start, root, --> Обмануть
+01/02/2023 02:27:10, main, game_start, root, --> [0]
+01/02/2023 02:27:13, main, game_start, root, --> Обмануть
+01/02/2023 02:27:13, main, game_start, root, --> [0, 0]
+01/02/2023 02:27:15, main, game_start, root, --> Обмануть
+01/02/2023 02:27:15, main, game_start, root, --> [0, 0, 0]
+01/02/2023 02:27:18, main, game_start, root, --> Обмануть
+01/02/2023 02:27:18, main, game_start, root, --> [0, 0, 0, 0]
+01/02/2023 02:27:19, main, game_start, root, --> Обмануть
+01/02/2023 02:27:19, main, game_start, root, --> [0, 0, 0, 0, 0]
+01/02/2023 02:27:20, main, game_start, root, --> Обмануть
+01/02/2023 02:27:20, main, game_start, root, --> [0, 0, 0, 0, 0, 0]
+01/02/2023 02:27:22, main, game_start, root, --> Обмануть
+01/02/2023 02:27:22, main, game_start, root, --> [0, 0, 0, 0, 0, 0, 0]
+01/02/2023 02:27:23, main, game_start, root, --> Обмануть
+01/02/2023 02:27:23, main, game_start, root, --> [0, 0, 0, 0, 0, 0, 0, 0]
+01/02/2023 02:27:24, main, game_start, root, --> Обмануть
+01/02/2023 02:27:24, main, game_start, root, --> [0, 0, 0, 0, 0, 0, 0, 0, 0]
+01/02/2023 02:27:26, main, game_start, root, --> Обмануть
+01/02/2023 02:27:26, main, game_start, root, --> [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+01/02/2023 02:27:26, main, game_start, root, --> 7 1-Наивный, 2-Обманщик, 3-Подражатель, 4-Злопамятный, 5- Детектив
+01/02/2023 02:27:26, main, game_start, root, --> Игрок		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], очки игрока 30
+01/02/2023 02:27:26, main, game_start, root, --> Соперник	[1, 1, 1, 1, 1, 1, 1, 1, 1, 1], очки соперника 0
+01/02/2023 02:29:51, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Polling is stopped.
+01/02/2023 02:29:51, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
+01/02/2023 02:29:51, base_events, default_exception_handler, asyncio, --> Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000011CE3F02110>
+01/02/2023 02:29:56, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
+01/02/2023 02:30:03, main, cmd_start, root, --> {"message_id": 4614, "from": {"id": 5116739545, "is_bot": false, "first_name": "Сергей", "last_name": "Конищев", "username": "Levin70", "language_code": "ru"}, "chat": {"id": 5116739545, "first_name": "Сергей", "last_name": "Конищев", "username": "Levin70", "type": "private"}, "date": 1672626603, "text": "Главная"}
+01/02/2023 02:30:06, main, game_start, root, --> Обмануть
+01/02/2023 02:30:06, main, game_start, root, --> [0]
+01/02/2023 02:30:08, main, game_start, root, --> Обмануть
+01/02/2023 02:30:08, main, game_start, root, --> [0, 0]
+01/02/2023 02:30:09, main, game_start, root, --> Обмануть
+01/02/2023 02:30:09, main, game_start, root, --> [0, 0, 0]
+01/02/2023 02:30:11, main, game_start, root, --> Обмануть
+01/02/2023 02:30:11, main, game_start, root, --> [0, 0, 0, 0]
+01/02/2023 02:30:18, main, game_start, root, --> Опустить монетку
+01/02/2023 02:30:18, main, game_start, root, --> [0, 0, 0, 0, 1]
+01/02/2023 02:30:19, main, game_start, root, --> Опустить монетку
+01/02/2023 02:30:19, main, game_start, root, --> [0, 0, 0, 0, 1, 1]
+01/02/2023 02:30:21, main, game_start, root, --> Опустить монетку
+01/02/2023 02:30:21, main, game_start, root, --> [0, 0, 0, 0, 1, 1, 1]
+01/02/2023 02:30:22, main, game_start, root, --> Обмануть
+01/02/2023 02:30:22, main, game_start, root, --> [0, 0, 0, 0, 1, 1, 1, 0]
+01/02/2023 02:30:25, main, game_start, root, --> Обмануть
+01/02/2023 02:30:25, main, game_start, root, --> [0, 0, 0, 0, 1, 1, 1, 0, 0]
+01/02/2023 02:30:26, main, game_start, root, --> Обмануть
+01/02/2023 02:30:26, main, game_start, root, --> [0, 0, 0, 0, 1, 1, 1, 0, 0, 0]
+01/02/2023 02:30:26, main, game_start, root, --> 7 1-Наивный, 2-Обманщик, 3-Подражатель, 4-Злопамятный, 5- Детектив
+01/02/2023 02:30:26, main, game_start, root, --> Игрок		[0, 0, 0, 0, 1, 1, 1, 0, 0, 0], очки игрока 28
+01/02/2023 02:30:26, main, game_start, root, --> Соперник	[1, 1, 1, 1, 1, 1, 1, 1, 1, 1], очки соперника 4
+01/02/2023 02:31:45, main, cmd_start, root, --> {"message_id": 4670, "from": {"id": 5116739545, "is_bot": false, "first_name": "Сергей", "last_name": "Конищев", "username": "Levin70", "language_code": "ru"}, "chat": {"id": 5116739545, "first_name": "Сергей", "last_name": "Конищев", "username": "Levin70", "type": "private"}, "date": 1672626706, "text": "Главная"}
+01/02/2023 02:31:48, main, game_start, root, --> Опустить монетку
+01/02/2023 02:31:48, main, game_start, root, --> [1]
+01/02/2023 02:31:49, main, game_start, root, --> Опустить монетку
+01/02/2023 02:31:49, main, game_start, root, --> [1, 1]
+01/02/2023 02:31:52, main, game_start, root, --> Опустить монетку
+01/02/2023 02:31:52, main, game_start, root, --> [1, 1, 1]
+01/02/2023 02:31:54, main, game_start, root, --> Обмануть
+01/02/2023 02:31:54, main, game_start, root, --> [1, 1, 1, 0]
+01/02/2023 02:31:59, main, game_start, root, --> Обмануть
+01/02/2023 02:31:59, main, game_start, root, --> [1, 1, 1, 0, 0]
+01/02/2023 02:32:01, main, game_start, root, --> Обмануть
+01/02/2023 02:32:01, main, game_start, root, --> [1, 1, 1, 0, 0, 0]
+01/02/2023 02:32:02, main, game_start, root, --> Обмануть
+01/02/2023 02:32:02, main, game_start, root, --> [1, 1, 1, 0, 0, 0, 0]
+01/02/2023 02:32:05, main, game_start, root, --> Обмануть
+01/02/2023 02:32:05, main, game_start, root, --> [1, 1, 1, 0, 0, 0, 0, 0]
+01/02/2023 02:32:07, main, game_start, root, --> Опустить монетку
+01/02/2023 02:32:07, main, game_start, root, --> [1, 1, 1, 0, 0, 0, 0, 0, 1]
+01/02/2023 02:32:08, main, game_start, root, --> Обмануть
+01/02/2023 02:32:08, main, game_start, root, --> [1, 1, 1, 0, 0, 0, 0, 0, 1, 0]
+01/02/2023 02:32:09, main, game_start, root, --> 7 1-Наивный, 2-Обманщик, 3-Подражатель, 4-Злопамятный, 5- Детектив
+01/02/2023 02:32:09, main, game_start, root, --> Игрок		[1, 1, 1, 0, 0, 0, 0, 0, 1, 0], очки игрока 27
+01/02/2023 02:32:09, main, game_start, root, --> Соперник	[1, 1, 1, 1, 1, 1, 1, 1, 1, 1], очки соперника 6
+01/02/2023 02:32:14, main, game_start, root, --> Опустить монетку
+01/02/2023 02:32:14, main, game_start, root, --> [1]
+01/02/2023 02:32:18, main, game_start, root, --> Опустить монетку
+01/02/2023 02:32:18, main, game_start, root, --> [1, 1]
+01/02/2023 02:32:23, main, game_start, root, --> Обмануть
+01/02/2023 02:32:23, main, game_start, root, --> [1, 1, 0]
+01/02/2023 02:32:24, main, game_start, root, --> Обмануть
+01/02/2023 02:32:24, main, game_start, root, --> [1, 1, 0, 0]
+01/02/2023 02:32:25, main, game_start, root, --> Обмануть
+01/02/2023 02:32:25, main, game_start, root, --> [1, 1, 0, 0, 0]
+01/02/2023 02:32:28, main, game_start, root, --> Обмануть
+01/02/2023 02:32:28, main, game_start, root, --> [1, 1, 0, 0, 0, 0]
+01/02/2023 02:32:29, main, game_start, root, --> Опустить монетку
+01/02/2023 02:32:29, main, game_start, root, --> [1, 1, 0, 0, 0, 0, 1]
+01/02/2023 02:32:36, main, game_start, root, --> Опустить монетку
+01/02/2023 02:32:36, main, game_start, root, --> [1, 1, 0, 0, 0, 0, 1, 1]
+01/02/2023 02:32:37, main, game_start, root, --> Опустить монетку
+01/02/2023 02:32:37, main, game_start, root, --> [1, 1, 0, 0, 0, 0, 1, 1, 1]
+01/02/2023 02:32:39, main, game_start, root, --> Опустить монетку
+01/02/2023 02:32:39, main, game_start, root, --> [1, 1, 0, 0, 0, 0, 1, 1, 1, 1]
+01/02/2023 02:32:39, main, game_start, root, --> 7 1-Наивный, 2-Обманщик, 3-Подражатель, 4-Злопамятный, 5- Детектив
+01/02/2023 02:32:39, main, game_start, root, --> Игрок		[1, 1, 0, 0, 0, 0, 1, 1, 1, 1], очки игрока 25
+01/02/2023 02:32:39, main, game_start, root, --> Соперник	[1, 1, 1, 1, 1, 1, 1, 1, 1, 1], очки соперника 10
+01/02/2023 02:37:03, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Polling is stopped.
+01/02/2023 02:37:03, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
+01/02/2023 02:37:03, base_events, default_exception_handler, asyncio, --> Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000017C74092110>
+01/02/2023 02:37:07, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
+01/02/2023 02:38:09, main, cmd_start, root, --> {"message_id": 4777, "from": {"id": 5116739545, "is_bot": false, "first_name": "Сергей", "last_name": "Конищев", "username": "Levin70", "language_code": "ru"}, "chat": {"id": 5116739545, "first_name": "Сергей", "last_name": "Конищев", "username": "Levin70", "type": "private"}, "date": 1672627090, "text": "Главная"}
+01/02/2023 02:38:12, main, game_start, root, --> Опустить монетку
+01/02/2023 02:38:12, main, game_start, root, --> [1]
+01/02/2023 02:38:14, main, game_start, root, --> Опустить монетку
+01/02/2023 02:38:14, main, game_start, root, --> [1, 1]
+01/02/2023 02:38:15, main, game_start, root, --> Обмануть
+01/02/2023 02:38:15, main, game_start, root, --> [1, 1, 0]
+01/02/2023 02:38:17, main, game_start, root, --> Обмануть
+01/02/2023 02:38:17, main, game_start, root, --> [1, 1, 0, 0]
+01/02/2023 02:38:18, main, game_start, root, --> Обмануть
+01/02/2023 02:38:18, main, game_start, root, --> [1, 1, 0, 0, 0]
+01/02/2023 02:38:20, main, game_start, root, --> Опустить монетку
+01/02/2023 02:38:20, main, game_start, root, --> [1, 1, 0, 0, 0, 1]
+01/02/2023 02:38:26, main, game_start, root, --> Опустить монетку
+01/02/2023 02:38:26, main, game_start, root, --> [1, 1, 0, 0, 0, 1, 1]
+01/02/2023 02:38:30, main, game_start, root, --> Обмануть
+01/02/2023 02:38:30, main, game_start, root, --> [1, 1, 0, 0, 0, 1, 1, 0]
+01/02/2023 02:38:32, main, game_start, root, --> Обмануть
+01/02/2023 02:38:32, main, game_start, root, --> [1, 1, 0, 0, 0, 1, 1, 0, 0]
+01/02/2023 02:38:36, main, game_start, root, --> Опустить монетку
+01/02/2023 02:38:36, main, game_start, root, --> [1, 1, 0, 0, 0, 1, 1, 0, 0, 1]
+01/02/2023 02:38:37, main, game_start, root, --> 7 1-Наивный, 2-Обманщик, 3-Подражатель, 4-Злопамятный, 5- Детектив
+01/02/2023 02:38:37, main, game_start, root, --> Игрок		[1, 1, 0, 0, 0, 1, 1, 0, 0, 1], очки игрока 18
+01/02/2023 02:38:37, main, game_start, root, --> Соперник	[1, 1, 1, 1, 0, 0, 1, 1, 1, 0], очки соперника 12
+01/02/2023 03:29:39, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Polling is stopped.
+01/02/2023 03:29:39, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
+01/02/2023 03:29:39, base_events, default_exception_handler, asyncio, --> Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000015416372110>
+01/02/2023 03:29:43, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Start polling.
+01/02/2023 03:29:46, main, cmd_start, root, --> {"message_id": 4833, "from": {"id": 5116739545, "is_bot": false, "first_name": "Сергей", "last_name": "Конищев", "username": "Levin70", "language_code": "ru"}, "chat": {"id": 5116739545, "first_name": "Сергей", "last_name": "Конищев", "username": "Levin70", "type": "private"}, "date": 1672630187, "text": "Главная"}
+01/02/2023 03:29:53, main, game_start, root, --> Опустить монетку
+01/02/2023 03:29:53, main, game_start, root, --> [1]
+01/02/2023 03:29:55, main, game_start, root, --> Опустить монетку
+01/02/2023 03:29:55, main, game_start, root, --> [1, 1]
+01/02/2023 03:29:57, main, game_start, root, --> Опустить монетку
+01/02/2023 03:29:57, main, game_start, root, --> [1, 1, 1]
+01/02/2023 03:29:58, main, game_start, root, --> Обмануть
+01/02/2023 03:29:58, main, game_start, root, --> [1, 1, 1, 0]
+01/02/2023 03:30:01, main, game_start, root, --> Опустить монетку
+01/02/2023 03:30:01, main, game_start, root, --> [1, 1, 1, 0, 1]
+01/02/2023 03:30:03, main, game_start, root, --> Опустить монетку
+01/02/2023 03:30:03, main, game_start, root, --> [1, 1, 1, 0, 1, 1]
+01/02/2023 03:30:04, main, game_start, root, --> Опустить монетку
+01/02/2023 03:30:04, main, game_start, root, --> [1, 1, 1, 0, 1, 1, 1]
+01/02/2023 03:30:06, main, game_start, root, --> Обмануть
+01/02/2023 03:30:06, main, game_start, root, --> [1, 1, 1, 0, 1, 1, 1, 0]
+01/02/2023 03:30:10, main, game_start, root, --> Обмануть
+01/02/2023 03:30:10, main, game_start, root, --> [1, 1, 1, 0, 1, 1, 1, 0, 0]
+01/02/2023 03:30:16, main, game_start, root, --> Опустить монетку
+01/02/2023 03:30:16, main, game_start, root, --> [1, 1, 1, 0, 1, 1, 1, 0, 0, 1]
+01/02/2023 03:30:17, main, game_start, root, --> 8 1-Наивный, 2-Обманщик, 3-Подражатель, 4-Злопамятный, 5-Детектив, 6-Обезьяна, 7-Подражатель_2, 8-Простой
+01/02/2023 03:30:17, main, game_start, root, --> Игрок		[1, 1, 1, 0, 1, 1, 1, 0, 0, 1], очки игрока 12
+01/02/2023 03:30:17, main, game_start, root, --> Соперник	[1, 1, 1, 1, 0, 0, 0, 0, 1, 0], очки соперника 18
+01/02/2023 03:30:51, main, cmd_start, root, --> {"message_id": 4889, "from": {"id": 5116739545, "is_bot": false, "first_name": "Сергей", "last_name": "Конищев", "username": "Levin70", "language_code": "ru"}, "chat": {"id": 5116739545, "first_name": "Сергей", "last_name": "Конищев", "username": "Levin70", "type": "private"}, "date": 1672630252, "text": "Главная"}
+01/02/2023 03:30:53, main, game_start, root, --> Обмануть
+01/02/2023 03:30:53, main, game_start, root, --> [0]
+01/02/2023 03:30:55, main, game_start, root, --> Обмануть
+01/02/2023 03:30:55, main, game_start, root, --> [0, 0]
+01/02/2023 03:30:56, main, game_start, root, --> Обмануть
+01/02/2023 03:30:56, main, game_start, root, --> [0, 0, 0]
+01/02/2023 03:30:58, main, game_start, root, --> Обмануть
+01/02/2023 03:30:58, main, game_start, root, --> [0, 0, 0, 0]
+01/02/2023 03:30:59, main, game_start, root, --> Обмануть
+01/02/2023 03:30:59, main, game_start, root, --> [0, 0, 0, 0, 0]
+01/02/2023 03:31:00, main, game_start, root, --> Обмануть
+01/02/2023 03:31:00, main, game_start, root, --> [0, 0, 0, 0, 0, 0]
+01/02/2023 03:31:02, main, game_start, root, --> Обмануть
+01/02/2023 03:31:02, main, game_start, root, --> [0, 0, 0, 0, 0, 0, 0]
+01/02/2023 03:31:03, main, game_start, root, --> Обмануть
+01/02/2023 03:31:03, main, game_start, root, --> [0, 0, 0, 0, 0, 0, 0, 0]
+01/02/2023 03:31:04, main, game_start, root, --> Обмануть
+01/02/2023 03:31:04, main, game_start, root, --> [0, 0, 0, 0, 0, 0, 0, 0, 0]
+01/02/2023 03:31:05, main, game_start, root, --> Обмануть
+01/02/2023 03:31:05, main, game_start, root, --> [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+01/02/2023 03:31:06, main, game_start, root, --> 8 1-Наивный, 2-Обманщик, 3-Подражатель, 4-Злопамятный, 5-Детектив, 6-Обезьяна, 7-Подражатель_2, 8-Простой
+01/02/2023 03:31:06, main, game_start, root, --> Игрок		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], очки игрока 15
+01/02/2023 03:31:06, main, game_start, root, --> Соперник	[1, 0, 1, 0, 1, 0, 1, 0, 1, 0], очки соперника 0
+01/02/2023 03:32:34, dispatcher, start_polling, aiogram.dispatcher.dispatcher, --> Polling is stopped.
+01/02/2023 03:32:34, dispatcher, stop_polling, aiogram.dispatcher.dispatcher, --> Stop polling...
+01/02/2023 03:32:34, base_events, default_exception_handler, asyncio, --> Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000002078498B210>
