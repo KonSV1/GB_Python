@@ -25,7 +25,7 @@ import datetime
 #                 new_list.extend(['1', x])
 #         seg = tail
 #     return new_list
-    
+
 # seg = ['0']
 # for _ in range(15):
 #     seg = f(seg)
@@ -52,6 +52,18 @@ import datetime
 # named_tuple = time.localtime() # get struct_time
 # print(time.strftime("%m/%d/%Y, %H:%M:%S", named_tuple)).
 
-import os
+# import os
 
-print(f'\n{os.getcwd()}')
+# print(f'\n{os.getcwd()}')
+
+import time
+
+# s = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# a = 0
+# while a< 10:
+#     print(a)
+#     a,*s = s
+#     time.sleep(1)
+
+arr = [1, 2, 3, 4]
+print(sum(arr))

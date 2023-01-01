@@ -114,3 +114,26 @@ IndexError: list index out of range
 12/22/2022 21:36:00, bot_command, calc, root, --> 56.0 + 45.0 = 101.0
 12/22/2022 21:37:28, _application, stop, telegram.ext._application, --> Application is stopping. This might take a moment.
 12/22/2022 21:37:28, _application, stop, telegram.ext._application, --> Application.stop() complete
+12/23/2022 15:31:42, _application, start, telegram.ext._application, --> Application started
+12/23/2022 15:31:43, bot_command, help_comm, root, --> Запрос --> /help
+12/23/2022 15:31:43, bot_command, help_comm, root, --> Ответ --> /hi - приветствие
+/time - узнать дату и время        
+/calc - калькулятор для 2-х чисел
+12/23/2022 15:32:36, bot_command, hi_comm, root, --> Запрос --> /hi
+12/23/2022 15:32:36, bot_command, hi_comm, root, --> Ответ --> Привет Сергей
+12/23/2022 15:32:39, bot_command, time_comm, root, --> Запрос --> /time
+12/23/2022 15:32:39, bot_command, time_comm, root, --> Ответ --> 12/23/2022, 15:32:39
+12/23/2022 15:32:45, bot_command, calc, root, --> Запрос --> /calc
+12/23/2022 15:32:45, _application, process_error, telegram.ext._application, --> No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\.lib\Lib\site-packages\telegram\ext\_application.py", line 1070, in process_update
+    await coroutine
+  File "C:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\.lib\Lib\site-packages\telegram\ext\_handler.py", line 143, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\levin\OneDrive\GB_обучение\_Специализация\GIT_1\Python\DZ\DZ_9\Ex_2\bot_command.py", line 38, in calc
+    x, y, op = float(msg[1]), float(msg[2]), msg[3]
+                     ~~~^^^
+IndexError: list index out of range
+12/23/2022 15:33:26, bot_command, calc, root, --> Запрос --> /calc 23 24 *
+12/23/2022 15:33:26, bot_command, calc, root, --> 23.0 * 24.0 = 552.0

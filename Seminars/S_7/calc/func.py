@@ -1,4 +1,4 @@
-import math
+
 
 
 def calc(a, b, op):
@@ -14,9 +14,5 @@ def calc(a, b, op):
                 return round(a/b, 2)
             except ZeroDivisionError:
                 print('на ноль делить нельзя')
-        case '**' | '^':
-            return a**b
-        case 'nr':
-            return round(math.pow(a,1/b), 2)
         case _:
             return 'неизвестная операция'
